@@ -40,7 +40,7 @@
                         ВАШ СОВЕТНИК
                     </p>
                     <img src="~assets/img/logo2.png" alt="ВАШ ЮРИСТ">
-                    <p>
+                    <p class="header-logo-name-h2">
                         БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
                     </p>
 				</div>
@@ -85,11 +85,14 @@ export default {
 
 .header-background {
     background: url(~assets/img/fon3.jpg) center center / cover no-repeat;
-    height: 710px;
+    height: 640px;
 }
 
 .header-logo {
     margin-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header-logo-name {
@@ -99,11 +102,31 @@ export default {
     color: white;
 }
 
+.header-logo-name>img {
+    width: 160px;
+    height: 160px;
+}
 .header-logo-name>p {
     margin: 0;
 }
 .header-logo-name-h1 {
     font-size: 28px;
+}
+
+.header-logo-name-h2 {
+    
+    font-size: 18px;
+    background-color: dodgerblue;
+    background-color: rgb(247, 56, 56);
+    padding: 10px 20px;
+}
+.header-logo-slogan {
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 27px;
+    padding: 0 20px;
+    font-size: 20px;
 }
 .menu {
 	margin: 0;
@@ -115,7 +138,6 @@ export default {
 li {
 	list-style-type: none;
 	text-decoration: none;
-	
 }
 
 .menu>li {
@@ -170,12 +192,6 @@ li>a {
     background-color: rgba(255, 255, 255, .1)
 }
 
-@media (min-width: 360px) {
-   .submenu {
-        /* right: 20px; */
-    }
-}
-
 @media (min-width: 500px) {
     .header-menu {
         display: flex;
@@ -183,15 +199,24 @@ li>a {
     }
 }
 
+@media (min-width: 1000px) {
+    .header-logo-slogan {
+        width: 750px;
+    }
+}
+
 @media (min-width: 1200px) {
     .header {
         justify-content: center;
     }
+    .header-logo {
+        margin-top: 50px;
+    }
+    .header-background {
+        height: 550px;
+    }
     .container {
         width: 1200px; 
-    }
-    .submenu {
-        /* right: 20px; */
     }
     .submenu>li>a {
         padding: 10px 10px 10px 50px;

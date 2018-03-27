@@ -1,102 +1,19 @@
 <template>
-  <div class="container">
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-            NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-            NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-            NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-            NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-            NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
-      NTRCN ТЕКСМТ<br>
+  <div class="content-wrap">
+    <AppContentServices/>
+    <AppContentPlus/>
   </div>
 </template>
 
 <script>
+  import AppContentServices from '~/components/AppContentServices.vue'
+  import AppContentPlus from '~/components/AppContentPlus.vue'
 
   export default {
-    components: {},
+    components: {
+      AppContentServices,
+      AppContentPlus
+    },
     data () {
       return {
         online: true
@@ -122,6 +39,9 @@
     }
   }
 </script>
-<style>
-
+ 
+<style scoped>
+.content-wrap {
+  display: block;
+}
 </style>

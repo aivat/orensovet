@@ -31,6 +31,11 @@ export default {
 </script>
 
 <style scoped>
+
+.header {
+    box-shadow: 0 -1px 8px rgba(0,0,0,.3);
+    padding: 5px 0;
+}
 .container {
     width: 100%; 
 }
