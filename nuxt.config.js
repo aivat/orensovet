@@ -7,7 +7,11 @@ module.exports = {
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
   */
-  head: {},
+  head: {
+    link: [
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' }
+    ]
+  },
   /*
   ** Customize the progress-bar color
   */
