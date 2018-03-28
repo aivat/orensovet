@@ -63,6 +63,7 @@ export default {
 	text-decoration: none;
 	border-bottom: 1px dashed #000000;
     color: black;
+    font-weight: 500;
 }
 
 .href-contact:hover {

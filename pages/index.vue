@@ -2,17 +2,23 @@
   <div class="content-wrap">
     <AppContentServices/>
     <AppContentPlus/>
+    <AppContentReviews/>
+    <AppContentJobs/>
   </div>
 </template>
 
 <script>
   import AppContentServices from '~/components/AppContentServices.vue'
   import AppContentPlus from '~/components/AppContentPlus.vue'
+  import AppContentJobs from '~/components/AppContentJobs.vue'
+  import AppContentReviews from '~/components/AppContentReviews.vue'
 
   export default {
     components: {
       AppContentServices,
-      AppContentPlus
+      AppContentPlus,
+      AppContentJobs,
+      AppContentReviews
     },
     data () {
       return {

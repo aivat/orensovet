@@ -154,6 +154,8 @@ li>a {
 	text-decoration: none;
 	padding: 10px 5px;
 	border-bottom: 2px solid transparent;
+    /* font-size: 14px; */
+    font-weight: 500;
 }
 
 .menu>li>a:hover {

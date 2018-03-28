@@ -74,6 +74,7 @@
 
 .content-content {
   flex-direction: column;
+  margin: 20px 0 50px 0;
 }
 .content-main {
   margin-bottom: 40px;
@@ -84,7 +85,7 @@
 }
 .content-title-h2 {
     color: #222222;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 400;
     margin-bottom: 10px;
     text-align: center;
@@ -149,6 +150,9 @@
     }
     .services-href {
       width: 310px;
+    }
+    .content-title-h2 {
+      font-size: 30px;
     }
 }
 </style>

@@ -3,17 +3,20 @@
     <AppHeader/>
     <AppHeaderMenu/>
     <nuxt nuxt-child-key="none" role="main" />
+    <AppFooter/>
   </div>
 </template>
 
 <script>
 import AppHeader from '~/components/AppHeader.vue'
 import AppHeaderMenu from '~/components/AppHeaderMenu.vue'
+import AppFooter from '~/components/AppFooter.vue'
 
 export default {
   components: {
     AppHeader,
-    AppHeaderMenu
+    AppHeaderMenu,
+    AppFooter
   }
 }
 </script>

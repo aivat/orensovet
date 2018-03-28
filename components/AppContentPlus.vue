@@ -2,13 +2,12 @@
   <div class="content content-background">
       <div class="gradient">
       <div class="container">
-          <div class="content content-content">
-               <!-- <div class="list-item-title">
+          <div class="content content-plus">
+                <div class="list-item-title">
                   <div class="item">
                       <p class="content-title-h2">В нашем профессиональном активе</p>
                   </div>
-              </div>
-			  <br> -->
+              </div> 
               <div class="digits-wrapper">
                     <div class="digit-wrapper">
                       <div class="digit-wrapper-h2">5 лет</div> 
@@ -49,9 +48,11 @@
     justify-content: center;
 }
 
-.content-content {
+.content-plus {
   flex-direction: column;
   color: white;
+  justify-content: center;
+  height: 100%;
 }
 .content-title {
   display: flex;
@@ -59,11 +60,14 @@
 }
 .content-title-h2 {
     color: white;
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 400;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 600;
+    background-color: rgb(247, 56, 56);
+    background-color: rgb(0, 0, 0, 0.1);
+    padding: 5px 15px;
 }
 .content-background {
     height: 553px;
@@ -78,7 +82,7 @@
 .digits-wrapper {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
 }
 
@@ -106,6 +110,10 @@
     .digits-wrapper {
 		flex-direction: row;
     }
+    .content-title-h2 {
+        width: 400px;
+        margin: auto;
+    }
 }
 @media (min-width: 1200px) {
     .content {
@@ -113,6 +121,20 @@
     }
     .container {
         width: 1200px; 
+    }
+
+    .content-title-h2 {
+        width: 500px;
+    }
+    .list-item-title {
+        margin-bottom: 70px;
+    }
+    .digit-wrapper-content {
+        width: 300px;
+    }
+    .digit-wrapper {
+        background-color: rgba(0, 0, 0, 0.3);
+        margin-right: 20px;
     }
 }
 </style>
