@@ -6,7 +6,18 @@
               <p class="content-title-h2 title-h2-main">Отзывы о нашей работе</p>
             </div>
             <div class="content-main">
-               
+                <div v-swiper:mySwiper="swiperOption">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="banner in banners">
+                      <div class="ban"> {{ banner }}
+                        </div>
+                      <!-- <img :src="banner"> -->
+                    </div>
+                  </div>
+                  <div class="swiper-pagination" slot="pagination"></div>
+                  <div class="swiper-button-prev" slot="button-prev"></div>
+                  <div class="swiper-button-next" slot="button-next"></div>
+                </div>
             </div>
           </div>
     </div>
@@ -14,10 +25,67 @@
 </template>
 
 <script>
-
+export default {
+    data() {
+      return {
+                banners: [
+          '_nuxt/img/fon6.b16ad27.jpg',
+          '_nuxt/img/fon6.b16ad27.jpg',
+          '_nuxt/img/fon6.b16ad27.jpg'
+        ],
+        swiperOption: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }
+        }
+      }
+    }
+  }
 </script>
  
 <style scoped>
+.ban {
+  background-color: violet;
+  width: 100%;
+  height: 200px;
+}
+.my-swiper {
+    height: 300px;
+    width: 100%;
+}
+.my-swiper     .swiper-slide {
+   height: 300px;
+    width: 100%;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 700;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+.my-swiper.swiper-pagination>.swiper-pagination-bullet {
+           height: 300px;
+    width: 100%;
+      text-align: center;
+      font-size: 38px;
+      font-weight: 700;
+      background-color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        background-color: red;
+}
+
 .container {
     width: 100%; 
 }
