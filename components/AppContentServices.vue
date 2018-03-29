@@ -3,7 +3,8 @@
       <div class="container">
           <div class="content content-content">
             <div class="content-title">
-              <p class="content-title-h2 title-h2-main">ЮРИДИЧЕСКИЕ УСЛУГИ</p>
+              <!-- <p class="content-title-h2">ЮРИДИЧЕСКИЕ УСЛУГИ</p> -->
+              <p class="content-title-h2 h2-edit">Юридические услуги</p>
             </div>
             <div class="content-main">
                 <ul class="services">
@@ -37,17 +38,17 @@
                     ЖИЛИЩНЫЕ СПОРЫ
                     </a>
                   </li>
-                  <li class="services-href-visible">
+                  <li v-bind:class="{ 'services-href-visible': isActive }">
                     <a href="/services/spory-s-zastrojshchikami.html" class="services-href">
                     CПОРЫ С ЗАСТРОЙЩИКАМИ
                     </a>
                   </li>
-                  <li class="services-href-visible">
+                  <li v-bind:class="{ 'services-href-visible': isActive }">
                     <a href="/services/zashchita-prav-potrebitelej.html" class="services-href">
                     ЗАЩИТА ПРАВ ПОТРЕБИТЕЛЕЙ
                     </a>
                   </li>
-                  <li class="services-href-visible">
+                  <li v-bind:class="{ 'services-href-visible': isActive }">
                     <a href="/services/oformlenie-nedvizhimosti.html" class="services-href">
                       ОФОРМЛЕНИЕ НЕДВИЖИМОСТИ
                     </a>
@@ -60,7 +61,27 @@
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+        isActive: true
+    }
+  },
+  mounted: function () {
+    let width = window.innerWidth
+    if (width > 1000) {
+        this.isActive = false;
+    }
+     console.log('width:'+ width)
+  },
+  computed: { 
+  },
+  methods: {
+        handleScroll () {
+          //  let width = window.innerWidth
+        }
+  }
+}
 </script>
  
 <style scoped>
@@ -77,7 +98,7 @@
   margin: 20px 0 50px 0;
 }
 .content-main {
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 .content-title {
   display: flex;
@@ -86,10 +107,13 @@
 .content-title-h2 {
     color: #222222;
     font-size: 26px;
-    font-weight: 400;
+    margin-top: 0;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 600;
+}
+.h2-edit {
+  font-weight: 400;
 }
 .services-href-visible {
   display: none;
@@ -153,6 +177,9 @@
     }
     .content-title-h2 {
       font-size: 30px;
+    }
+    .content-content {
+      padding: 20px 0;
     }
 }
 </style>

@@ -18,7 +18,7 @@
                               <div class="footer-item-tel-title-h2">ВРЕМЯ РАБОТЫ</div>
 
                             </div>
-						  <p class="fotter-desc">Пн-Пт: с 09:00 до 19:00;</p>
+						  <p class="fotter-desc">Пн-Пт: с 09:00 до 19:00</p>
 						  <p class="fotter-desc">Сб-Вс: выходные</p>	
 					  </div>
                   </div>
@@ -144,7 +144,7 @@
      /* background-image: radial-gradient(circle farthest-side at center bottom,#009cde,#003087 125%); */
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
     /* color: white; */
     font-size: 18px;
     /* color:white; */
@@ -205,6 +205,10 @@
     }
     .foot-cont-copy {
         margin-top: 35px;
+    }
+
+    .footer-item {
+        align-items: flex-start;
     }
     .content {
         justify-content: center;

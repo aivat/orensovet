@@ -44,6 +44,15 @@
                         БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
                     </p>
 				</div>
+                <div class="call-wrap">
+                        <div class="call">
+                            <svg fill="#FFFFFF" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            Заказать звонок
+                        </div>
+                </div>   
 		  		<div class="header-logo-slogan">
 			  		Главное достояние юриста — способность всегда быть уверенным в себе.
                     Мы уверены в своей работе, поэтому гарантируем логичное решение вашей проблемы. 
@@ -66,6 +75,45 @@ export default {
 </script>
 
 <style scoped>
+.call-wrap {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+.call {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(247, 56, 56);
+    /* border: 4px solid blue; */
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+    width: 150px;
+    color: #ffffff;
+    /* background-color:rgb(247, 56, 56); */
+    font-weight: 500;
+    cursor: pointer;
+    /* box-shadow: 0 0 0 2px #FFFFFF; */
+    /* box-shadow: 0 0 0 2px transparent, 0 0 0 4px rgb(216, 33, 33); */
+    transition: box-shadow .15s ease-in-out;
+     -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: transparent; 
+}
+.call>svg {
+    margin-right: 5px;
+}
+.call:hover {
+    background-color:rgb(216, 33, 33);
+}
+
+.call:active {
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(216, 33, 33);
+}
+
+.call:focus {
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #99D6D6;
+}
 .container {
     width: 100%; 
 }
@@ -85,7 +133,7 @@ export default {
 
 .header-background {
     background: url(~assets/img/fon3.jpg) center center / cover no-repeat;
-    height: 640px;
+    height: 690px;
 }
 
 .header-logo {
@@ -122,7 +170,7 @@ export default {
 }
 .header-logo-slogan {
     color: white;
-    margin-top: 50px;
+    margin-top: 0px;
     text-align: center;
     line-height: 27px;
     padding: 0 20px;
@@ -203,7 +251,11 @@ li>a {
 
 @media (min-width: 1000px) {
     .header-logo-slogan {
-        width: 750px;
+        width: 800px;
+        margin-top: 20px;
+    }
+    .header-background {
+        height: 600px;
     }
 }
 
@@ -214,14 +266,14 @@ li>a {
     .header-logo {
         margin-top: 50px;
     }
-    .header-background {
-        height: 550px;
-    }
     .container {
         width: 1200px; 
     }
     .submenu>li>a {
         padding: 10px 10px 10px 50px;
+    }
+    .header-logo-name {
+        margin-top: 20px;
     }
 }
 </style>
