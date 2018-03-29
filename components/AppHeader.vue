@@ -43,6 +43,7 @@ export default {
     display: flex;
     justify-content: space-between;
     background-color: white;
+    z-index: 9999;
 }
 
 .header-left, .header-right {

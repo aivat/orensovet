@@ -197,14 +197,19 @@
     .content-jobs {
         flex-direction: row;
         margin-top: 70px;
+        font-size: 16px;
         /* align-items: baseline; */
     }
 
     .container {
         width: 1200px; 
     }
+
+    .call-wrap {
+        margin-top: 80px;
+    }
     .content-jobs-top {
-        width: 500px;
+        width: 650px;
     }
     .content-jobs-bottom {
         flex-grow:3;
@@ -215,13 +220,13 @@
         flex-wrap: wrap;
     }
     .content-jobs-list-item {
-        width: 270px;
+        width: 200px;
     }
     .content-jobs-list-item:nth-child(2n+1) {
         margin-right: 15px;
     }
     .gradient {
-    background: linear-gradient(to right, rgba(33, 34, 36, 0.7) 0%, rgba(16, 38, 70, 0.8) 100%);  
+        background: linear-gradient(to right, rgba(33, 34, 36, 0.7) 0%, rgba(16, 38, 70, 0.8) 100%);  
     }
 }
 </style>

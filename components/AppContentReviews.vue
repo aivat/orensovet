@@ -1,17 +1,32 @@
 <template>
   <div class="content content-background">
       <div class="container">
-          <div class="content content-content">
+          <div class="content content-reviews">
             <div class="content-title">
-              <p class="content-title-h2 title-h2-main">Отзывы о нашей работе</p>
+              <p class="content-title-h2">Отзывы о нашей работе</p>
+              <!-- <p class="content-title-h2">ОТЗЫВЫ О НАШЕЙ РАБОТЕ</p> -->
             </div>
             <div class="content-main">
                 <div v-swiper:mySwiper="swiperOption">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide" v-for="banner in banners">
-                      <div class="ban"> {{ banner }}
-                        </div>
-                      <!-- <img :src="banner"> -->
+                    <div class="swiper-slide" v-for="banner in banners" :key="banner.id">
+                      <div class="ban">
+                          <div class="slide-wrap">
+                            <div class="slide-wrap-text">
+                              {{ banner.text }}
+                            </div>
+                            <div class="slide-wrap-bottom">
+                              <div class="slide-wrap-bottom-wrap">
+                                <div class="slide-wrap-bottom-wrap-name">
+                                  <a :href="banner.link">{{ banner.name }}</a>
+                                </div>
+                                <div class="slide-wrap-bottom-wrap-info">
+                                  {{ banner.info }}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
                     </div>
                   </div>
                   <div class="swiper-pagination" slot="pagination"></div>
@@ -25,14 +40,38 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import 'swiper/dist/css/swiper.css'
+if (process.browser) {
+  const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
+  Vue.use(VueAwesomeSwiper)
+}
 export default {
     data() {
       return {
-                banners: [
-          '_nuxt/img/fon6.b16ad27.jpg',
-          '_nuxt/img/fon6.b16ad27.jpg',
-          '_nuxt/img/fon6.b16ad27.jpg'
-        ],
+        banners: {
+          2: {
+            id: "1",
+            name: "Мадина",
+            info: "27 лет, Оренбург",
+            text: "Хочу поблагодарить юристов компании за успешное взыскание денежных средств по полученному решению суда! Неустойку получили в полном обьеме! Тот самый случай когда результат превысил ожидания. Спасибо за грамотную работу на каждом этапе, начиная от подготовки и составления документов для суда, заканчивая итоговым решением и получением денег на руки.",
+            link: "https://vk.com/id72506129"
+          },	  	  
+          1: {
+            id: "2",
+            name: "Альбина",
+            info: "31 год, Оренбург",
+            text: "Я была дольщиком в строящемся доме. Стройка то замораживалась, то возобновлялась. Я ждала не один год, когда застройщик подберется к строительству моего этажа. Решила вернуть свои деньги, но застройщик отказывался это делать. Тогда я обратилась к специалистам ООО «Ваш Советник» за помощью в решении моего вопроса. Деньги вернули, из доли я вышла и купила вторичку! Также хочу сказать спасибо за грамотно составленный договор купли-продажи квартиры.",
+            link: "https://vk.com/id58497687"
+          },
+          3: {
+            id: "3",
+            name: "Сергей",
+            info: "29 лет, Оренбург",
+            text: "Хотелось бы оставить положительный отзыв о работе юриста ООО 'Ваш Советник' Рачилина Сергея Юрьевича в качестве представителя - в общении он всегда убедителен, что является очень ценным качеством, так как связано с умением отстоять интересы клиента. Также понравился его ответственный подход к делу, профессионализм и надежность. Большое спасибо за проделанную работу! В целом также понравилась организованность и стиль работы компании, отдельная благодарность старшему партнеру Дмитрию  Анатольевичу Аскерову.",
+            link: "https://vk.com/id58497687"
+          }
+        },
         swiperOption: {
           slidesPerView: 1,
           spaceBetween: 30,
@@ -53,37 +92,13 @@ export default {
  
 <style scoped>
 .ban {
-  background-color: violet;
+  /* background-color: violet; */
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
 }
 .my-swiper {
     height: 300px;
     width: 100%;
-}
-.my-swiper     .swiper-slide {
-   height: 300px;
-    width: 100%;
-      text-align: center;
-      font-size: 38px;
-      font-weight: 700;
-      background-color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-.my-swiper.swiper-pagination>.swiper-pagination-bullet {
-           height: 300px;
-    width: 100%;
-      text-align: center;
-      font-size: 38px;
-      font-weight: 700;
-      background-color: #eee;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-        background-color: red;
 }
 
 .container {
@@ -94,12 +109,12 @@ export default {
   display: flex;
 }
 
-.content-content {
+.content-reviews {
   flex-direction: column;
-  margin: 20px 0 50px 0;
+  /* margin: 20px 0 50px 0; */
 }
 .content-main {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 .content-title {
   display: flex;
@@ -108,60 +123,42 @@ export default {
 .content-title-h2 {
     color: #222222;
     font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: center;
-    font-weight: 600;
-}
-.services-href-visible {
-  display: none;
-}
-.services {
-    list-style-type: none;
-	  text-decoration: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-   justify-content: center;
+    font-weight: 400;
 }
 
-.services-href {
-	display: inline-block;
-	padding: 20px 30px;
-	text-decoration: none;
-	color: inherit;
-	font-size: 16px;
-	
-	font-weight: 500;
-  width: 200px;
-/*	width: 310px;*/
+.slide-wrap {
+  padding: 0 40px 30px 50px;
+  font-size: 14px;
+  line-height: 22px;
 }
-.services li {
-    border: 1px solid #0070ba;
-/*    padding: 20px 30px;*/
-    margin-right: 10px;
-    margin-top: 10px;
-    background-color: white;
-/*    flex-basis: 310px; */
-    cursor: pointer;
-    border-radius: 40px;
-	text-align: center;
-	color: #0070ba;
+.slide-wrap-bottom {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.services li:hover {
-    background-color: #FFB640;
-    color: white;
-    border: 1px solid #FFB640;
-	background-color: rgb(0, 112, 186);
-	border: 1px solid rgb(0, 112, 186);
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    transition-duration: 0.2s;
-    transition-timing-function: initial;
-    transition-delay: initial;
-    transition-property: box-shadow, background-color, border;
-    
+.slide-wrap-bottom-wrap {
+  margin-top: 10px;
+  /* padding: 0 10px; */
+}
+
+.slide-wrap-bottom-wrap-name>a {
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px dashed black;
+    color: black;
+    padding: 0 4px 0 0;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.slide-wrap-bottom-wrap-name>a:hover {
+  color: #f00000;
+}
+.slide-wrap-bottom-wrap-info {
+  color: rgb(129, 129, 129);
+  font-size: 12px;
 }
 @media (min-width: 1200px) {
     .content {
@@ -170,11 +167,24 @@ export default {
     .container {
         width: 1200px; 
     }
-    .services-href {
-      width: 310px;
+    .content-reviews {
+      padding: 20px 0;
     }
     .content-title-h2 {
-      font-size: 30px;
+      margin-bottom: 0;
+    }
+    .slide-wrap{
+      width: 650px;
+      padding: 40px 40px 20px 50px;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 30px;
+      color: #032c55;
+      /* align-items: center; */
+    }
+    .ban {
+      display: flex;
+      justify-content: center;
     }
 }
 </style>
