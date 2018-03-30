@@ -5,10 +5,12 @@
             <div class="header-menu">
                 <ul class="menu">
                     <li>
-                        <a href="#" class="menu-active">О БЮРО</a>
+                        <!-- <a href="#" class="menu-active">О БЮРО</a> -->
+                        <nuxt-link to="/">О БЮРО</nuxt-link>
                     </li>
                     <li>
-                        <a href="#">КОМАНДА</a>
+                        <!-- <a href="#">КОМАНДА</a> -->
+                        <nuxt-link to="team">КОМАНДА</nuxt-link>
                     </li>
                     <li class="link-margin">
                         <a href="#">КОНТАКТЫ</a>

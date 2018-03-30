@@ -73,6 +73,7 @@
 
 .content-footer {
   flex-direction: column;
+    margin-bottom: 20px;
 }
 .content-title {
   display: flex;
@@ -190,7 +191,7 @@
     justify-content: center;
 }
 .fotter-title-copy {
-    margin: 20px 0;
+    margin-top: 40px;
     font-size: 12px;
     color: #9299a2;
 }
@@ -218,7 +219,6 @@
     }
     .content-footer {
         margin-top: 30px;
-        margin-bottom: 20px;
     }
 
 }

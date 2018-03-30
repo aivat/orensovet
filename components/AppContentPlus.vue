@@ -125,9 +125,11 @@
 
     .content-title-h2 {
         width: 500px;
+        /* background-color:  rgb(247, 56, 56); */
     }
     .list-item-title {
         margin-bottom: 70px;
+
     }
     .digit-wrapper-content {
         width: 300px;
@@ -135,6 +137,7 @@
     .digit-wrapper {
         background-color: rgba(0, 0, 0, 0.3);
         margin-right: 20px;
+        /* border: 4px solid rgb(247, 56, 56); */
     }
 }
 </style>
