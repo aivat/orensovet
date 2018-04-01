@@ -13,7 +13,7 @@
                         <nuxt-link to="team">КОМАНДА</nuxt-link>
                     </li>
                     <li class="link-margin">
-                        <a href="#">КОНТАКТЫ</a>
+                        <nuxt-link to="contacts">КОНТАКТЫ</nuxt-link>
                     </li>
                     <li>
                         <a href="#">
@@ -24,7 +24,7 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href=#>ЦЕНЫ</a>
+                                <nuxt-link to="price">ЦЕНЫ</nuxt-link>
                             </li>
                             <li>
                                 <a href=#>БЛОГ</a>
