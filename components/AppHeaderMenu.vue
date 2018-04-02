@@ -10,10 +10,10 @@
                     </li>
                     <li>
                         <!-- <a href="#">КОМАНДА</a> -->
-                        <nuxt-link to="team">КОМАНДА</nuxt-link>
+                        <nuxt-link to="/team">КОМАНДА</nuxt-link>
                     </li>
                     <li class="link-margin">
-                        <nuxt-link to="contacts">КОНТАКТЫ</nuxt-link>
+                        <nuxt-link to="/contacts">КОНТАКТЫ</nuxt-link>
                     </li>
                     <li>
                         <a href="#">
@@ -24,10 +24,10 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <nuxt-link to="price">ЦЕНЫ</nuxt-link>
+                                <nuxt-link to="/price">ЦЕНЫ</nuxt-link>
                             </li>
                             <li>
-                                <a href=#>БЛОГ</a>
+                                <nuxt-link to="/blog">БЛОГ</nuxt-link>
                             </li>
                         </ul>
                     </li>					
