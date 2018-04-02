@@ -226,12 +226,12 @@ header, section, article {
     background-color: #FF4100;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 8px;
     color: white;
     font-size: 9px;
     margin: 0 5px;
-    /* padding-top: px; */
-    line-height: 14px;
+    padding-top: 2px;
+    /* line-height: 8px; */
 }
 @media all and (min-width: 500px) {
     .content-blog {
