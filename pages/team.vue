@@ -1,5 +1,5 @@
 <template>
-  <div class="content-wrap">
+  <div class="content-wrap" id="teamStart">
     <AppTeam/>
   </div>
 </template>
@@ -16,14 +16,10 @@
         online: true
       }
     },
-    mounted () {
-      if (!window.navigator) {
-        this.online = false
-        return
-      }
-      this.online = Boolean(window.navigator.onLine)
-      window.addEventListener('offline', this._toggleNetworkStatus)
-      window.addEventListener('online', this._toggleNetworkStatus)
+    beforeUpdate: function () {
+      if (window.innerWidth>500) {
+        window.scrollTo(0,500)
+      } else window.scrollTo(0,100)
     },
     methods: {
       _toggleNetworkStatus ({ type }) {

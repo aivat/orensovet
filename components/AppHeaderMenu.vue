@@ -10,10 +10,10 @@
                     </li>
                     <li>
                         <!-- <a href="#">КОМАНДА</a> -->
-                        <nuxt-link to="/team">КОМАНДА</nuxt-link>
+                        <nuxt-link to="/team#start">КОМАНДА</nuxt-link>
                     </li>
                     <li class="link-margin">
-                        <nuxt-link to="/contacts">КОНТАКТЫ</nuxt-link>
+                        <nuxt-link to="/contacts#start">КОНТАКТЫ</nuxt-link>
                     </li>
                     <li>
                         <a href="#">
@@ -24,7 +24,7 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <nuxt-link to="/price">ЦЕНЫ</nuxt-link>
+                                <nuxt-link to="/price#start">ЦЕНЫ</nuxt-link>
                             </li>
                             <li>
                                 <nuxt-link to="/blog">БЛОГ</nuxt-link>
@@ -61,6 +61,7 @@
 			  	</div>
             </div>
         </div>
+        <div id="start"></div>
     </div>
   </header>
 </template>
@@ -77,6 +78,10 @@ export default {
 </script>
 
 <style scoped>
+#start {
+    height: 1px;
+    /* margin-bottom: 80px; */
+}
 .call-wrap {
     margin: 25px 0;
     display: flex;
@@ -135,7 +140,7 @@ export default {
 
 .header-background {
     background: url(~assets/img/fon3.jpg) center center / cover no-repeat;
-    height: 690px;
+    height: 710px;
 }
 
 .header-logo {
@@ -257,11 +262,15 @@ li>a {
         margin-top: 20px;
     }
     .header-background {
-        height: 600px;
+        height: 580px;
     }
 }
 
 @media (min-width: 1200px) {
+    #start {
+        height: 1px;
+        /* margin-bottom: 80px; */
+    }
     .header {
         justify-content: center;
     }

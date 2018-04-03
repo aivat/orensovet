@@ -5,7 +5,7 @@
                 <div class="breadcrumbs-wrapper">
                     <AppBreadcrumbs :bread="breadcrumbs"></AppBreadcrumbs>
                 </div>
-                <div class="blog-wrapper">
+                <div class="blog-wrapper" >
                     <ul>
                         <li v-for="article in articles" :key="article.id">
                             <nuxt-link v-bind:to="reversedLink(article.id, article.title)">
@@ -121,7 +121,7 @@ export default {
                             'shch', '', 'y', '', 'e', 'yu', 'ya'
                         ];
                     return t[index];
-                });
+                }) + '#start';
         }
     }
 }

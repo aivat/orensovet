@@ -280,11 +280,16 @@ blockquote {
     .article-article {
         background-color:white; 
         box-shadow: none;
+        padding: 12px 0;
         /* padding: 0; */
     }
 
     .article-header-article, .article-annotation, .article-text, .article-h1 {
         padding: 0px;
+    }
+
+    .article-breadcrumbs-wrapper {
+        padding: 10px 5px;
     }
 }
 </style>

@@ -4,9 +4,7 @@
           <div class="header-top">
             <div class="header-left">
                 <i class="iconic-location"></i>
-                <a href="kontakt.html" class="href-contact href-contact-adress">
-                    г. Оренбург, ул. Салмышская, д. 34/5, офис 207
-                </a> 
+                <nuxt-link class="href-contact href-contact-adress" to="/contacts#start">г. Оренбург, ул. Салмышская, д. 34/5, офис 207</nuxt-link>
             </div>
             <div class="header-right">
                 <i class="iconic-telephone"></i>
