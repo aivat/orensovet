@@ -1,17 +1,15 @@
 <template>
   <div class="content-wrap">
-      <AppContentReviews/>
-    <AppContentServices/>
+    <AppTeam/>
   </div>
 </template>
 
 <script>
-  import AppContentServices from '~/components/AppContentServices.vue'
-  import AppContentReviews from '~/components/AppContentReviews.vue'
+  import AppTeam from '~/components/AppTeam.vue'
+
   export default {
     components: {
-      AppContentServices,
-      AppContentReviews
+      AppTeam
     },
     data () {
       return {
