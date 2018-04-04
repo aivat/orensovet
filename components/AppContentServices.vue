@@ -68,18 +68,12 @@ export default {
     }
   },
   mounted: function () {
-    let width = window.innerWidth
-    if (width > 1000) {
-        this.isActive = false;
-    }
-     console.log('width:'+ width)
-  },
-  computed: { 
-  },
-  methods: {
-        handleScroll () {
-          //  let width = window.innerWidth
-        }
+     if (process.browser) {
+          let width = window.innerWidth
+          if (width > 1000) {
+            this.isActive = false;
+          }
+      }
   }
 }
 </script>

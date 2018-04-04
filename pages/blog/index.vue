@@ -28,6 +28,24 @@
                         </li>
                     </ul>
                 </div>
+                <div class="list-loader blog-wrapper" v-if="loading">
+                    <ul>
+                        <li v-for="article in articlesLoading" :key="article.id">
+                            <div>
+                                <header class="list-loader-header-header list-loader-header">
+                                    <div class="wrap-author">
+                                        <span> </span>
+                                    </div>
+                                </header>
+                                <section class="list-loader-header-section list-loader-header">
+                                </section>
+                                <article class="list-loader-header-article list-loader-header" >
+                                    
+                                </article>
+                            </div>
+                        </li>
+                    </ul>
+				</div>
                 <div class="table-wrapper">
                 </div>
           </div>
@@ -37,6 +55,7 @@
 
 <script>
 import AppBreadcrumbs from '~/components/AppBreadcrumbs.vue'
+import axios from 'axios'
 
 export default {
     data () {
@@ -52,42 +71,19 @@ export default {
                 link: '/blog',
                 seen: false
             }],
-            articles: [{
-                id: 1,
-                title: 'Семейные споры',
-                date: '17 марта 2018 г.',
-                author: 'Самат Баймешов',
-                annotation: 'Семейное право регулирует определённый вид общественных отношений – семейные отношения, которые возникают из факта брака и принадлежности к семье. Большая часть этих отношений носит не имущественный характер, но часто они переплетаются с имущественными отношениями.'
+            articles:[],
+            loading: true,
+			error: false,
+            lastArticle: 0,
+            scrolled: false,
+            articlesLoading: [{
+                id: 1
             }, {
-                id: 2,
-                title: 'Оформление недвижимости',
-                date: '07 авгувста 2018 г.',
-                author: 'Владислав Черненко',
-                annotation: 'Оформление недвижимости — это обязательная процедура. По закону объекты, которые не были зарегистрированы и не прошли надлежащее оформление недвижимости в регистрационных органах, не считаются принадлежащими своему фактическому владельцу. Вот и поговорим о том, как именно осуществляется эта процедура и что для нее требуется.'
+                id: 2
             }, {
-                id: 3,
-                title: 'Взыскание долгов',
-                date: '31 апреля 2018 г.',
-                author: 'Сергей Рачилин',
-                annotation: 'Обращение в юридическую компанию позволит на гарантированно законных основаниях организовать переговоры с должником и поможет решить проблему во внесудебном порядке.'
+                id: 3
             }, {
-                id: 4,
-                title: 'Семейные споры',
-                date: '17 марта 2018 г.',
-                author: 'Самат Баймешов',
-                annotation: 'Семейное право регулирует определённый вид общественных отношений – семейные отношения, которые возникают из факта брака и принадлежности к семье. Большая часть этих отношений носит не имущественный характер, но часто они переплетаются с имущественными отношениями.'
-            }, {
-                id: 5,
-                title: 'Оформление недвижимости',
-                date: '07 авгувста 2018 г.',
-                author: 'Владислав Черненко',
-                annotation: 'Оформление недвижимости — это обязательная процедура. По закону объекты, которые не были зарегистрированы и не прошли надлежащее оформление недвижимости в регистрационных органах, не считаются принадлежащими своему фактическому владельцу. Вот и поговорим о том, как именно осуществляется эта процедура и что для нее требуется.'
-            }, {
-                id: 6,
-                title: 'Взыскание долгов',
-                date: '31 апреля 2018 г.',
-                author: 'Сергей Рачилин',
-                annotation: 'Обращение в юридическую компанию позволит на гарантированно законных основаниях организовать переговоры с должником и поможет решить проблему во внесудебном порядке.'
+                id: 4
             }]
         }
     },
@@ -95,8 +91,21 @@ export default {
         AppBreadcrumbs
     },
     computed: {
+        resourseUrl() {
+			return 'http://lba.ru/api/v1/articles?lastArticle='+this.lastArticle
+		}
+    },
+    created() {
+        if (process.browser) {    
+			 window.addEventListener('scroll', this.handleScroll)
+        }
+        this.fetchData()
+        // this.setGetTimeOut() 
     },
     methods: {
+        setGetTimeOut() {
+            setTimeout(()=>{this.fetchData()}, 100);
+        },
         reversedLogoName(author) {
             console.log(author)
             let newLogo = ''
@@ -122,12 +131,61 @@ export default {
                         ];
                     return t[index];
                 }) + '#start';
-        }
+        },
+        fetchData () {
+            this.loading = true
+            axios.get(this.resourseUrl)
+                .then(response =>{
+                        console.log(response)
+                        this.articles = this.articles.concat(response.data)
+                        this.loading = false
+                        this.lastArticle = this.articles[this.articles.length - 1].id - 15
+                        console.log(this.articles[this.articles.length - 1].id - 15)
+                })
+                .catch(e => {
+                        console.log(e.message)
+                        this.error = true
+                        this.loading = false
+                        console.log(this.error)
+                });
+		},
+		handleScroll (event) {
+            // почему так высчитывается так до конца и не разобрался, но математическим путем опряделяется верно. 40 пиксей добавил, чтобы загрузка происхода еще до прокрутки до самого низа
+            let scrollTop = window.pageYOffset,
+                listOffsetHeight = document.body.offsetHeight,
+                listScrollHeight = document.body.scrollHeight
+
+            let diffHeight = listScrollHeight - listOffsetHeight
+
+            if (diffHeight <= (scrollTop+40) && !this.loading && !this.error) {
+                this.fetchData ();
+            }
+		}
     }
 }
 </script>
  
 <style scoped>
+.list-loader {
+    color: black;
+}
+.list-loader-header {
+    background-color: rgba(14, 127, 202, 0.315);
+    border-radius: 4px;
+    margin: 5px 10px;
+}
+
+.list-loader-header-article {
+    height: 80px;
+}
+
+.list-loader-header-section {
+    height: 20px;
+}
+
+.list-loader-header-header {
+    height: 15px;
+}
 .container {
     width: 100%; 
 }

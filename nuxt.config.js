@@ -2,7 +2,9 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {},
+  build: {
+    vendor: ['axios']
+  },
   /*
   ** Headers
   ** Common headers are already provided by @nuxtjs/pwa preset
@@ -22,6 +24,10 @@ module.exports = {
   manifest: {
     theme_color: '#3B8070'
   },
+  
+  css: [
+    'assets/main.css'
+  ],
   /*
   ** Modules
   */
