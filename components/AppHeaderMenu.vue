@@ -62,17 +62,24 @@
             </div>
         </div>
         <div id="start"></div>
+        <div class="">
+            <AppModalCall/>
+        </div>
     </div>
   </header>
 </template>
 
 <script>
+import AppModalCall  from '~/components/AppModalCall.vue'
 
 export default {
     data () {
       return {
         online: true
       }
+    },
+    components: {
+        AppModalCall
     }
   }
 </script>
