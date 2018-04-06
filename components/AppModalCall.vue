@@ -1,36 +1,83 @@
 <template>
-    <transition name="modal">
+    <div name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
                 <div class="modal-container">
-                    <h2 class="modal-h2">Заказать звонок специалиста</h2>
-                    <div class="modal-input">
-                        <label>Как к вам обращаться:</label>
-                        <input class="modal-input-input" type="text" size="20">
+                    <div v-if="!showResult" class="modal-actions">
+                        <h2 class="modal-h2">Заказать звонок специалиста</h2>
+                        <div class="modal-input">
+                            <label>Как к вам обращаться:</label>
+                            <input class="modal-input-input" type="text" size="20" v-model="client.name">
+                        </div>
+                        <div class="modal-input">
+                            <label>Номер телефона:</label>
+                            <input class="modal-input-input" type="tel" v-model="client.tel">
+                        </div>
+                        <div v-if="error">
+                            Заполните все поля!
+                        </div>
+                        <div class="modal-wrap-action">
+                            <button @click="$emit('close')">Закрыть</button>
+                            <button v-on:click="postClient()">Отправить</button>
+                        </div>
                     </div>
-                    <div class="modal-input">
-                        <label>Номер телефона:</label>
-                        <input class="modal-input-input" type="tel">
-                    </div>
-                    <div class="modal-wrap-action">
-                        <button>Закрыть</button>
-                        <button>Отправить</button>
+                    <div v-if="showResult" class="modal-result">
+                        Заявка принята! Мы вам перезвоним!
                     </div>
                 </div>
             </div>
         </div>
-    </transition>
+    </div>
 </template>
 
 <script>
+import  axios from 'axios'
 
 export default {
     components: {
     },
     data () {
         return {
-            online: true
+            client: {
+                name: 'test',
+                tel: ''
+            },
+            error: false,
+            showResult: false
         }
+    },
+    computed: {
+        isValid: function () {
+            if ( this.client.name == '' || this.client.tel == '') {
+                return false
+            } else return true
+        }
+    },
+    methods: {  
+            postClient () {
+                if ( this.isValid ) {
+                    // axios.post('http://testik.ru/books/new', this.book)
+                    // .then(response => {
+                    //     console.log('данные =', response);
+                    //     router.push({ path: '/' })
+                    // })
+                    // .catch(e => {
+                    //   console.log(e.message)
+                    // })  
+                    this.error = false
+                    this.showResult = true
+                    this.setGetTimeOut()
+                    // this.$emit('close')
+                } else {
+                    this.error = true
+                }  
+            },
+            setGetTimeOut() {
+                setTimeout(()=>{ 
+                    this.showResult = false
+                     this.$emit('close')
+                }, 2000);
+            },
     }
 }
 </script>
