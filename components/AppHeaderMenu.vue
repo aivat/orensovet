@@ -117,11 +117,11 @@ export default {
     margin-right: 5px;
 }
 .call:hover {
-    background-color:rgb(216, 33, 33);
+    background-color:rgb(247, 56, 56);
 }
 
 .call:active {
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(216, 33, 33);
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(247, 56, 56);
 }
 
 .call:focus {
