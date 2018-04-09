@@ -39,8 +39,8 @@ export default {
     data () {
         return {
             client: {
-                name: '',
-                tel: ''
+                name: 'Айват',
+                tel: '89058887796'
             },
             error: false,
             showResult: false
@@ -56,7 +56,7 @@ export default {
     methods: {  
             postClient () {
                 if ( this.isValid ) {
-                    axios.post('http://lba.ru/mail.php', this.client)
+                    axios.post('http://lba.du/mail.php', this.client)
                     .then(response => {
                         console.log('данные =', response);
                         // router.push({ path: '/' })
