@@ -75,7 +75,7 @@ import AppModalCall  from '~/components/AppModalCall.vue'
 export default {
     data () {
       return {
-        showModal: true
+        showModal: false
       }
     },
     components: {

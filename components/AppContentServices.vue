@@ -54,6 +54,13 @@
                     </a>
                   </li>
               </ul>
+              <ul class="services">
+                <li v-for="article in articles" :key="article.id">
+                    <nuxt-link :to="article.link" class="services-href">
+                      {{ article.title }}
+                    </nuxt-link>
+                </li>
+              </ul>
             </div>
           </div>
     </div>
@@ -64,7 +71,54 @@
 export default {
   data() {
     return {
-        isActive: true
+        isActive: true,
+        articles: [
+          {
+            id: 1,
+            title: 'СЕМЕЙНЫЕ СПОРЫ',
+            link: 'blog/article-1-semeynye-spory#start'
+          },
+          {
+            id: 2,
+            title: 'ВЗЫСКАНИЕ ДОЛГОВ',
+            link: 'blog/article-2-vzyskanie-dolgov#start'
+          },
+          {
+            id: 3,
+            title: 'КАДАСТРОВЫЕ СПОРЫ',
+            link: 'blog/article-3-kadastrovye-spory#start'
+          },
+          {
+            id: 4,
+            title: 'СПОРЫ С БАНКАМИ',
+            link: 'blog/article-4-spory-s-bankami#start'
+          },
+          {
+            id: 5,
+            title: 'СТРАХОВЫЕ СПОРЫ',
+            link: 'blog/article-5-strahovye-spory#start'
+          },
+          {
+            id: 6,
+            title: 'ЖИЛИЩНЫЕ СПОРЫ',
+            link: 'blog/article-6-zhilishchnye-spory#start'
+          },
+          {
+            id: 7,
+            title: 'CПОРЫ С ЗАСТРОЙЩИКАМИ',
+            link: 'blog/article-7-spory-s-zastroyshchikami#start'
+          },
+          {
+            id: 8,
+            title: 'ЗАЩИТА ПРАВ ПОТРЕБИТЕЛЕЙ',
+            link: 'blog/article-8-zashchita-prav-potrebiteley#start'
+          },
+          {
+            id: 9,
+            title: 'ОФОРМЛЕНИЕ НЕДВИЖИМОСТИ',
+            link: 'blog/article-9-oformlenie-nedvizhimosti#start'
+          }
+        ]
     }
   },
   mounted: function () {
