@@ -7,53 +7,6 @@
               <p class="content-title-h2 h2-edit">Юридические услуги</p>
             </div>
             <div class="content-main">
-                <ul class="services">
-                  <li>
-                    <a href="/services/semejnye-spory.html" class="services-href">
-                      СЕМЕЙНЫЕ СПОРЫ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/services/vzyskanie-dolgov.html" class="services-href">
-                    ВЗЫСКАНИЕ ДОЛГОВ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/services/kadastrovye-spory.html" class="services-href">
-                    КАДАСТРОВЫЕ СПОРЫ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/services/spory-s-bankami.html" class="services-href">
-                    СПОРЫ С БАНКАМИ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/services/strahovye-spory.html" class="services-href">
-                    СТРАХОВЫЕ СПОРЫ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/services/zhilishchnye-spory.html" class="services-href">
-                    ЖИЛИЩНЫЕ СПОРЫ
-                    </a>
-                  </li>
-                  <li v-bind:class="{ 'services-href-visible': isActive }">
-                    <a href="/services/spory-s-zastrojshchikami.html" class="services-href">
-                    CПОРЫ С ЗАСТРОЙЩИКАМИ
-                    </a>
-                  </li>
-                  <li v-bind:class="{ 'services-href-visible': isActive }">
-                    <a href="/services/zashchita-prav-potrebitelej.html" class="services-href">
-                    ЗАЩИТА ПРАВ ПОТРЕБИТЕЛЕЙ
-                    </a>
-                  </li>
-                  <li v-bind:class="{ 'services-href-visible': isActive }">
-                    <a href="/services/oformlenie-nedvizhimosti.html" class="services-href">
-                      ОФОРМЛЕНИЕ НЕДВИЖИМОСТИ
-                    </a>
-                  </li>
-              </ul>
               <ul class="services">
                 <li v-for="article in articles" :key="article.id">
                     <nuxt-link :to="article.link" class="services-href">
@@ -121,13 +74,18 @@ export default {
         ]
     }
   },
-  mounted: function () {
-     if (process.browser) {
-          let width = window.innerWidth
-          if (width > 1000) {
-            this.isActive = false;
+  methods: {
+      even: function () {
+        if (process.browser) {
+              let width = window.innerWidth
+              if (width < 1000) {
+                this.articles.splice(6, 3)
           }
+        }
       }
+  },
+  mounted: function () {
+    this.even()
   }
 }
 </script>
