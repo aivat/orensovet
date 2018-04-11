@@ -122,7 +122,7 @@ export default {
 }
 .content-title-h2 {
     color: #222222;
-    font-size: 26px;
+    font-size: 30px;
     margin-bottom: 30px;
     text-align: center;
     font-weight: 400;

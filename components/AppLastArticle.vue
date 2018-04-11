@@ -176,7 +176,7 @@ header, section, article {
 }
 .content-title-h2 {
     color: #222222;
-    font-size: 26px;
+    font-size: 30px;
     margin-bottom: 10px;
     text-align: center;
     font-weight: 400;
@@ -225,7 +225,7 @@ header, section, article {
       padding: 20px 0;
     }
     .content-title-h2 {
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
     .swiper-link {
       width: 650px;
@@ -244,12 +244,13 @@ header, section, article {
     }
 
     section {
-
+      font-size: 32px;
+      font-weight: 600;
     }
     .text {
         font-size: 20px;
         line-height: 30px;
-        font-weight: 300;
+        font-weight: 400;
     }
 }
 </style>
