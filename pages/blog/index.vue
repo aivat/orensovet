@@ -176,15 +176,15 @@ export default {
 }
 
 .list-loader-header-article {
-    height: 80px;
+    height: 140px;
 }
 
 .list-loader-header-section {
-    height: 20px;
+    height: 40px;
 }
 
 .list-loader-header-header {
-    height: 15px;
+    height: 20px;
 }
 .container {
     width: 100%; 

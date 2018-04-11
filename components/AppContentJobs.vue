@@ -14,7 +14,7 @@
                             Чтобы получить услуги юриста, необходимо записаться на прием. Это можно сделать любым удобным способом:
                         </span>
                         <ul class="content-jobs-top-content-list">
-                            <li>воспользовавшись на сайте сервисом <a href="#" class="content-jobs-top-content-link"> «Заказать звонок»</a>;</li>
+                            <li>воспользовавшись на сайте сервисом <a @click="showModal = true" class="content-jobs-top-content-link"> «Заказать звонок»</a>;</li>
                             <li >позвонив по телефону в Оренбурге: <a  href="tel: +7 (3532) 608-464" class="content-jobs-top-content-link">+7 (3532) 608-464</a></li>
                         </ul> 
                     </div>
@@ -185,6 +185,7 @@ export default {
     text-decoration: none;
     border-bottom: 1px dashed white;
     color: white;
+    cursor: pointer;
 }
 
 .content-jobs-list {

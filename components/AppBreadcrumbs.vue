@@ -2,7 +2,7 @@
     <nav itemscope itemtype="http://schema.org/BreadcrumbList">
         <div class="nav-sahar" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" v-for="breadcrumb in bread" :key="breadcrumb.id">
             <nuxt-link class="link" v-bind:class="{ active: !breadcrumb.seen }" itemprop="item" v-bind:title="breadcrumb.name" v-bind:to="breadcrumb.link">
-                <span itemprop="name"> {{ breadcrumb.name }}</span>
+                <span itemprop="name"> {{ resizeBread(breadcrumb.name) }}</span>
                 <meta itemprop="position" v-bind:content="breadcrumb.id">
             </nuxt-link>
             <span v-if="breadcrumb.seen" class="slash">
@@ -53,6 +53,22 @@ export default {
                         link: '/link',
                         seen: false
                     }]
+                }
+            }
+        }
+    },
+    methods: {
+        resizeBread(name) {
+            if (process.browser) {
+                let width = window.innerWidth
+                if (width > 500) {
+                    if ( name.length > 50 ) {
+                        return name.substring(0,50) + ' ...'
+                    } else return name
+                } else {
+                    if ( name.length > 20 ) {
+                        return name.substring(0,21) + ' ...'
+                    } else return name
                 }
             }
         }

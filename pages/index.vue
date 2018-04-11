@@ -4,6 +4,7 @@
     <AppContentPlus/>
     <AppContentReviews/>
     <AppContentJobs/>
+    <AppLastArticle/>
   </div>
 </template>
 
@@ -12,13 +13,15 @@
   import AppContentPlus from '~/components/AppContentPlus.vue'
   import AppContentJobs from '~/components/AppContentJobs.vue'
   import AppContentReviews from '~/components/AppContentReviews.vue'
+  import AppLastArticle from '~/components/AppLastArticle.vue'
 
   export default {
     components: {
       AppContentServices,
       AppContentPlus,
       AppContentJobs,
-      AppContentReviews
+      AppContentReviews,
+      AppLastArticle
     },
     data () {
       return {

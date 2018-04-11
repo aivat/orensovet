@@ -107,6 +107,7 @@
       /* background-color: rgb(59, 59, 59); */
        background-color: white;
        color: black;
+       background-color: rgb(241, 241, 241);
      /* background: url(~assets/img/fon7.jpg)  center center / cover no-repeat, linear-gradient(to right, rgba(9, 5, 47, .85) 0%, rgba(49, 29, 94, .85) 100%); */ 
     /* background-position: center center / cover;
     background-repeat: no-repeat; */
