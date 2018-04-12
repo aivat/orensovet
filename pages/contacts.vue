@@ -10,6 +10,9 @@ import AppContacts from '~/components/AppContacts.vue'
 
 
 export default {
+    head: {
+      title: 'Контакты'
+    },
     components: {
       AppContacts
     }

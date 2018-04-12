@@ -78,6 +78,11 @@ export default {
     created(){
         this.fetchData()
     },
+    head () {
+        return {
+            title: this.articleTest.title
+        }     
+    },
     methods: {
         reversedLogoName() {
             let newLogo = ''

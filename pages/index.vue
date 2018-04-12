@@ -23,10 +23,8 @@
       AppContentReviews,
       AppLastArticle
     },
-    data () {
-      return {
-        online: true
-      }
+    head: {
+      title: 'Ваш СОВЕТНИК - Юридическое бюро'
     },
     mounted () {
       if (!window.navigator) {

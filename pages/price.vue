@@ -8,6 +8,9 @@
 import AppPrice from '~/components/AppPrice.vue'
 
 export default {
+    head: {
+      title: 'Цены'
+    },
     components: {
       AppPrice
     }

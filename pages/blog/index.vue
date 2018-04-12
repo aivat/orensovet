@@ -90,6 +90,9 @@ export default {
     components: {
         AppBreadcrumbs
     },
+    head: {
+      title: 'Блог'
+    },
     computed: {
         resourseUrl() {
 			return 'http://lba.ru/api/v1/articles?lastArticle='+this.lastArticle
@@ -136,17 +139,14 @@ export default {
             this.loading = true
             axios.get(this.resourseUrl)
                 .then(response =>{
-                        console.log(response)
                         this.articles = this.articles.concat(response.data)
                         this.loading = false
                         this.lastArticle = this.articles[this.articles.length - 1].id - 15
-                        console.log(this.articles[this.articles.length - 1].id - 15)
                 })
                 .catch(e => {
                         console.log(e.message)
                         this.error = true
                         this.loading = false
-                        console.log(this.error)
                 });
 		},
 		handleScroll (event) {

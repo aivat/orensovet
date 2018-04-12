@@ -11,10 +11,8 @@
     components: {
       AppTeam
     },
-    data () {
-      return {
-        online: true
-      }
+    head: {
+      title: 'Команда'
     },
     beforeUpdate: function () {
       if (window.innerWidth>500) {

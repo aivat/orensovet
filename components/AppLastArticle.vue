@@ -11,12 +11,13 @@
                   <div class="swiper-wrapper">
                     <!-- <div class="swiper-slide" v-for="banner in banners" :key="banner.id"> -->
                         <div class="swiper-slide" v-for="article in articles" :key="article.id">
-                            <nuxt-link class="swiper-link" v-bind:to="article.link">
+                          <div class="ban">
+                            <nuxt-link class="swiper-link" v-bind:to="reversedLink(article.id, article.title)">
                                 <header>
                                     <time> {{ article.date }}</time>
                                     <div class="wrap-author">
                                         <span class="logo-author">
-                                            {{ article.author }}
+                                            <!-- {{ article.author }} -->
                                         </span>
                                         <span> {{ article.author }}</span>
                                     </div>
@@ -28,6 +29,7 @@
                                     {{ article.annotation }}
                                 </article>
                             </nuxt-link>
+                          </div>
                         </div>
                     <!-- </div> -->
                   </div>
@@ -53,32 +55,24 @@ if (process.browser) {
 export default {
     data() {
       return {
-        articles: {
-          1: {
-            id: "1",
-            title: "Списали долг по микрозайму",
-            date: "2018-04-04 12:26:18",
-            author: "Сергей Рачилин",
-            link: "blog/article-11-spisali-dolg-po-mikrozaymu",
-            annotation: 'Споры с кредитными организациями в Оренбурге довольно стремительно занимают особое место в судебной практике каждого юриста. Разнообразие договоров займа между гражданами и банками, а также МФО, создают отличную возможность для создания новой судебной практики, где, в первую очередь, учитываются интересы заемщиков.'
-          },	  	  
-          2: {
-            id: "2",
-            title: "В Оренбургском суде юристы",
-            date: "2018-04-04 12:26:18",
-            author: "Сергей Рачилин",
-            link: "blog/article-10-v-orenburgskom-sude-yuristy-nashey-kompanii-dobilis-denezhnoy-kompensacii-za-izyatyy-zemelnyy-uchastok-gosudarstvennym-organom",
-            annotation: 'Для многих граждан одна только новость, что ответчиком по делу будет государственный орган, вызывает дискомфорт, неуверенность в положительном исходе дела, а также сомнение – стоит ли вообще начинать защиту своих законных прав и интересов?'
-          },
-          3: {
-            id: "3",
-            title: "Оформление недвижимости",
-            date: "27 лет, Оренбург",
-            author: "Владислав Чернеко",
-            link: "blog/article-9-oformlenie-nedvizhimosti",
-            annotation: 'Оформление недвижимости — это обязательная процедура. По закону объекты, которые не были зарегистрированы и не прошли надлежащее оформление недвижимости в регистрационных органах, не считаются принадлежащими своему фактическому владельцу. Вот и поговорим о том, как именно осуществляется эта процедура и что для нее требуется.'
-          }
+        articles:{
+          // 0: {
+          //   id: "1",
+          //   title: "Списали долг по микрозайму"
+          // },	  	  
+          // 1: {
+          //   id: "2",
+          //   title: "В Оренбургском суде юристы"
+          // },
+          // 2: {
+          //   id: "3",
+          //   title: "Оформление недвижимости"
+          // }
         },
+        art: {},
+        loading: true,
+        error: false,
+        resourseUrl: 'http://lba.ru/api/v1/articlesall?all=1',
         swiperOption: {
           slidesPerView: 1,
           spaceBetween: 30,
@@ -93,6 +87,48 @@ export default {
           }
         }
       }
+    },
+    mounted() {
+      this.fetchDataLast()
+    },
+    methods: {
+      fetchDataLast () {
+        this.loading = true
+        axios.get(this.resourseUrl)
+            .then(response =>{
+                    console.log(response)
+                    this.loading = false
+                    this.articles = response.data
+                    this.articles.map((name) => {
+                      this.art = this.art.concat(name)
+                    })
+                    console.log(this.articles)
+                    console.log(this.art)
+            })
+            .catch(e => {
+                    console.log(e.message)
+                    this.error = true
+                    this.loading = false
+            });
+		  },
+      reversedLink(id, title) {
+            let text = id + '-' + title
+            return 'blog/article-' + text.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,
+                function (all, ch, space, words, i) {
+                    if (space || words) {
+                        return space ? '-' : '';
+                    }
+                    var code = ch.charCodeAt(0),
+                        index = code == 1025 || code == 1105 ? 0 :
+                            code > 1071 ? code - 1071 : code - 1039,
+                        t = ['yo', 'a', 'b', 'v', 'g', 'd', 'e', 'zh',
+                            'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p',
+                            'r', 's', 't', 'u', 'f', 'h', 'c', 'ch', 'sh',
+                            'shch', '', 'y', '', 'e', 'yu', 'ya'
+                        ];
+                    return t[index];
+                }) + '#start';
+        },
     }
   }
 </script>
@@ -238,7 +274,7 @@ header, section, article {
       /* align-items: center; */
       box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
     }
-    .swiper-slide {
+    .ban {
       display: flex;
       justify-content: center;
     }
