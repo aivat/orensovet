@@ -4,7 +4,7 @@
           <div class="content content-content">
             <div class="content-title">
               <!-- <p class="content-title-h2">ЮРИДИЧЕСКИЕ УСЛУГИ</p> -->
-              <p class="content-title-h2 h2-edit">Юридические услуги</p>
+              <p class="content-title-h2 h2-edit">ЮРИДИЧЕСКИЕ УСЛУГИ</p>
             </div>
             <div class="content-main">
               <ul class="services">
@@ -101,7 +101,8 @@ export default {
 
 .content-content {
   flex-direction: column;
-  margin: 20px 0 50px 0;
+  margin-bottom: 30px;
+  /* margin: 20px 0 50px 0; */
 }
 .content-main {
   /* margin-bottom: 40px; */
@@ -111,15 +112,15 @@ export default {
   justify-content: center;
 }
 .content-title-h2 {
-    color: #222222;
-    font-size: 26px;
-    margin-top: 0;
-    margin-bottom: 10px;
+    color:black;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 300;
 }
 .h2-edit {
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 .services-href-visible {
   display: none;
@@ -171,6 +172,20 @@ export default {
     transition-property: box-shadow, background-color, border;
     
 }
+
+@media (min-width: 500px) {
+    .content-title-h2 {
+    font-size: 30px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    font-weight: 300;
+  }
+      .content-content {
+      margin-bottom: 75px;
+    }
+}
+
+
 @media (min-width: 1200px) {
     .content {
         justify-content: center;
@@ -184,8 +199,6 @@ export default {
     .content-title-h2 {
       font-size: 30px;
     }
-    .content-content {
-      padding: 20px 0;
-    }
+
 }
 </style>

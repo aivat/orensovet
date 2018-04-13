@@ -3,8 +3,8 @@
       <div class="container">
           <div class="content content-reviews">
             <div class="content-title">
-              <p class="content-title-h2">Отзывы о нашей работе</p>
-              <!-- <p class="content-title-h2">ОТЗЫВЫ О НАШЕЙ РАБОТЕ</p> -->
+              <!-- <p class="content-title-h2">Отзывы о нашей работе</p> -->
+              <p class="content-title-h2">ОТЗЫВЫ О НАШЕЙ РАБОТЕ</p>
             </div>
             <div class="content-main">
                 <div v-swiper:mySwiper="swiperOption">
@@ -121,9 +121,10 @@ export default {
   justify-content: center;
 }
 .content-title-h2 {
-    color: #222222;
-    font-size: 30px;
-    margin-bottom: 30px;
+    color:black;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 15px;
     text-align: center;
     font-weight: 400;
 }
@@ -160,6 +161,17 @@ export default {
   color: rgb(129, 129, 129);
   font-size: 12px;
 }
+@media all and (min-width: 500px) {
+    .content-title-h2 {
+    font-size: 30px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+    .content-reviews {
+      padding-bottom: 20px;
+    }
+}
 @media (min-width: 1200px) {
     .content {
         justify-content: center;
@@ -167,9 +179,7 @@ export default {
     .container {
         width: 1200px; 
     }
-    .content-reviews {
-      padding: 20px 0;
-    }
+
     .content-title-h2 {
       margin-bottom: 0;
     }

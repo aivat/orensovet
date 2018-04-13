@@ -47,7 +47,7 @@
                                     ШАГ 2
                                 </div>
                                 <div class="content-jobs-text">
-                                    Мы договариемся о встрече
+                                    Мы договариваемся о встрече
                                 </div>
                             </li>
                             <li class="content-jobs-list-item">

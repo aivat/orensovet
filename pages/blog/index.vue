@@ -203,17 +203,6 @@ export default {
   /* width: 900px; */
 }
 
-.content-title-h2 {
-    color: black;
-    font-size: 26px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    text-align: center;
-    font-weight: 600;
-    background-color: rgb(247, 56, 56);
-    background-color: rgb(0, 0, 0, 0.1);
-    padding: 5px 15px;
-}
 
 .breadcrumbs-wrapper {
     padding: 10px 5px;
