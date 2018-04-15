@@ -49,7 +49,7 @@ export default {
         articles: [],
         loading: true,
         error: false,
-        resourseUrl: 'http://lba.ru/api/v1/articlesall?all=1',
+        resourseUrl: 'http://lba.ru/api/v1/articlesindex?all',
         swiperOption: {
           slidesPerView: 1,
           spaceBetween: 30,
@@ -70,7 +70,7 @@ export default {
     },
     methods: {
       reversedLogoName(author) {
-          console.log(author)
+        //   console.log(author)
           let newLogo = ''
           author.split(' ').map(function(name) {
                   newLogo = newLogo + name[0].toUpperCase()
@@ -81,7 +81,7 @@ export default {
         this.loading = true
         axios.get(this.resourseUrl)
             .then(response =>{
-                    console.log(response)
+                    // console.log(response)
                     this.loading = false
                     this.articles = response.data
             })
@@ -181,7 +181,7 @@ a {
 header {
     display: flex;
     font-weight: 300;
-    color: rgb(129, 129, 129);
+    color: rgb(110, 110, 110);
     font-size: 12px;
     /* align-items: flex-start; */
     /* justify-content: space-between; */
@@ -203,7 +203,7 @@ header, section, article {
     text-align: center;
     height: 14px;
     width: 16px;
-    background-color: #FF4100;
+    background-color: #DD2C00;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
@@ -253,7 +253,6 @@ header, section, article {
 
     .content-title-h2 {
         width: 500px;
-        /* background-color:  rgb(247, 56, 56); */
     }
 }
 </style>

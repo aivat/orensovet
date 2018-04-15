@@ -110,7 +110,7 @@ export default {
             setTimeout(()=>{this.fetchData()}, 100);
         },
         reversedLogoName(author) {
-            console.log(author)
+            // console.log(author)
             let newLogo = ''
             author.split(' ').map(function(name) {
                     newLogo = newLogo + name[0].toUpperCase()
@@ -138,7 +138,7 @@ export default {
         fetchData () {
             this.loading = true
             axios.get(this.resourseUrl)
-                .then(response =>{
+                .then(response => {
                         this.articles = this.articles.concat(response.data)
                         this.loading = false
                         this.lastArticle = this.articles[this.articles.length - 1].id - 15
@@ -157,7 +157,7 @@ export default {
 
             let diffHeight = listScrollHeight - listOffsetHeight
 
-            if (diffHeight <= (scrollTop+40) && !this.loading && !this.error) {
+            if (diffHeight <= (scrollTop+40) && !this.loading && !this.error && this.lastArticle > 0) {
                 this.fetchData ();
             }
 		}

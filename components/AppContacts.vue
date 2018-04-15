@@ -16,9 +16,6 @@
                         КПП: <span>560901001</span> <br> 
                         ОГРН: <span>1175658024299</span>
                     </div>
-                    <div class="text">
-                        
-                    </div>
                 </div>
           </div>
     </div>

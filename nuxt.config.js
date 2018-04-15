@@ -14,6 +14,10 @@ module.exports = {
   head: {
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' }
+    ],
+    meta: [
+      { name: 'yandex-verification', content: 'd018a734873d45f8' },
+      { name: 'google-site-verification', content: 'QaGfxx4EGsb75n5G-2TS3wr8_PF4A2SkcfsqjMn44lE' }
     ]
   },
   /*
@@ -34,7 +38,16 @@ module.exports = {
   ** Modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['@nuxtjs/yandex-metrika',
+      {
+        id: '47481130',
+        webvisor: true,
+        clickmap:true
+        // useCDN:false,
+        // trackLinks:true,
+        // accurateTrackBounce:true,
+      }]
   ],
   generate: {
     routes: function () {
@@ -59,5 +72,8 @@ module.exports = {
           })
       })
     }
+  },
+  router: {
+    linkExactActiveClass: 'exact-active-link'
   }
 }

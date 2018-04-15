@@ -56,9 +56,9 @@ export default {
     methods: {  
             postClient () {
                 if ( this.isValid ) {
-                    axios.post('http://lba.ru/mail.php', this.client)
+                    axios.post('https://orensovet.ru/mail.php', this.client)
                     .then(response => {
-                        console.log('данные =', response);
+                        // console.log('данные =', response);
                         // router.push({ path: '/' })
                     })
                     .catch(e => {
@@ -95,12 +95,12 @@ export default {
     transition: opacity .3s ease;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+   align-items: center;
 }
 .modal-wrapper {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     /* align-items: flex-end; */
 }
 

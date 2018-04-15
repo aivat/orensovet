@@ -103,14 +103,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgb(247, 56, 56);
+    border: 1px solid rgb(211, 47, 47);
     border-radius: 30px;
     padding: 10px;
     text-align: center;
     width: 150px;
     font-size: 14px;
     color: #ffffff;
-    background-color:rgb(247, 56, 56);
+    background-color:rgb(211, 47, 47);
     font-weight: 500;
     cursor: pointer;
     transition: box-shadow .15s ease-in-out;
@@ -118,12 +118,12 @@ export default {
 }
 
 .call:hover {
-    border: 1px solid rgb(247, 56, 56);
-    background-color:rgb(216, 33, 33);
+    border: 1px solid rgb(169, 35, 35);
+    background-color:rgb(169, 35, 35);
 }
 
 .call:active {
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(216, 33, 33);
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(169, 35, 35);
 }
 
 .call:focus {
@@ -152,9 +152,9 @@ export default {
   flex-direction: column;
   color: white;
   margin-top: 20px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 22px;
   margin-bottom: 40px;
-  /* font-size: 16px; */
 }
 
 .content-title {
@@ -166,13 +166,12 @@ export default {
     color: white;
     font-size: 18px;
     margin-bottom: 10px;
-    /* text-align: center; */
     font-weight: 700;
     line-height: 26px;
 }
 
 .span-red {
-    background-color: rgb(247, 56, 56);
+    background-color: rgb(211, 47, 47);
     margin: 0;
     padding: 2px 10px;;
 }
@@ -194,10 +193,9 @@ export default {
 }
 .content-jobs-list-item {
   list-style-type: none; 
-  border: 4px solid rgb(247, 56, 56);
+  border: 4px solid rgb(211, 47, 47);
   margin-bottom: 15px;
   padding: 30px 30px;
-  /* height: 120px; */
 }
 .content-jobs-top, .content-jobs-bottom {
     padding: 0 30px;
@@ -216,9 +214,7 @@ export default {
     }
 }
 @media (min-width: 1200px) {
-    .content {
-        /* justify-content: center; */
-    }
+
     .content-jobs {
         flex-direction: row;
         margin-top: 70px;

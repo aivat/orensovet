@@ -5,23 +5,21 @@
             <div class="header-menu">
                 <ul class="menu">
                     <li>
-                        <!-- <a href="#" class="menu-active">О БЮРО</a> -->
                         <nuxt-link to="/">О БЮРО</nuxt-link>
                     </li>
                     <li>
-                        <!-- <a href="#">КОМАНДА</a> -->
                         <nuxt-link to="/team#start">КОМАНДА</nuxt-link>
                     </li>
                     <li class="link-margin">
                         <nuxt-link to="/contacts#start">КОНТАКТЫ</nuxt-link>
                     </li>
                     <li>
-                        <a href="#">
+                        <div class="submenu-svg">
                             <svg fill="#FFFFFF" height="24" viewBox="0 4 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
                             </svg>
-                        </a>
+                        </div>
                         <ul class="submenu">
                             <li>
                                 <nuxt-link to="/price#start">ЦЕНЫ</nuxt-link>
@@ -87,7 +85,6 @@ export default {
 <style scoped>
 #start {
     height: 1px;
-    /* margin-bottom: 80px; */
 }
 .call-wrap {
     margin: 25px 0;
@@ -98,18 +95,14 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgb(247, 56, 56);
-    /* border: 4px solid blue; */
+    border: 2px solid rgb(211, 47, 47);
     border-radius: 30px;
     padding: 10px;
     text-align: center;
     width: 150px;
     color: #ffffff;
-    /* background-color:rgb(247, 56, 56); */
     font-weight: 500;
     cursor: pointer;
-    /* box-shadow: 0 0 0 2px #FFFFFF; */
-    /* box-shadow: 0 0 0 2px transparent, 0 0 0 4px rgb(216, 33, 33); */
     transition: box-shadow .15s ease-in-out;
      -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-tap-highlight-color: transparent; 
 }
@@ -117,11 +110,11 @@ export default {
     margin-right: 5px;
 }
 .call:hover {
-    background-color:rgb(247, 56, 56);
+    background-color:rgb(211, 47, 47);
 }
 
 .call:active {
-    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(247, 56, 56);
+    box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px rgb(211, 47, 47);
 }
 
 .call:focus {
@@ -179,7 +172,7 @@ export default {
     
     font-size: 18px;
     background-color: dodgerblue;
-    background-color: rgb(247, 56, 56);
+    background-color: rgb(211, 47, 47);
     padding: 10px 20px;
 }
 .header-logo-slogan {
@@ -209,7 +202,11 @@ li {
 .menu>li:first-child {
 	margin-left: 0;
 }
-
+.submenu-svg {
+    padding: 10px 5px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
 li>a {
 	display: block;
 	color: white;
@@ -245,7 +242,6 @@ li>a {
     border: 2px solid white;
     top: 37px;
     right: 10px;
-    /* background-color: rgba(0, 0, 0, 0.2) */
 }
 
 .submenu>li>a {
@@ -256,6 +252,14 @@ li>a {
     background-color: rgba(255, 255, 255, .1)
 }
 
+.exact-active-link {
+    border-radius: 2px 2px 0 0;
+	border-bottom: 2px solid white;
+}
+.submenu>li>.exact-active-link {
+    border-bottom: 2px solid transparent;
+    background-color: rgba(255, 255, 255, .2)
+}
 @media (min-width: 500px) {
     .header-menu {
         display: flex;
@@ -276,7 +280,6 @@ li>a {
 @media (min-width: 1200px) {
     #start {
         height: 1px;
-        /* margin-bottom: 80px; */
     }
     .header {
         justify-content: center;
