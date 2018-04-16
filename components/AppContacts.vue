@@ -7,22 +7,18 @@
                 </div>
                 <div class="text-wrapper">
                     <h2>Контактные данные</h2>
-                    <div class="text" itemscope itemtype="http://schema.org/Organization">
+                    <div class="text" itemscope itemtype="http://schema.org/LegalService">
                         Наименование юридического лица: <span itemprop="legalName">ООО "Ваш Советник"</span><br>
                         Коммерческое обозначение: <span itemprop="name">Юридическое бюро "Ваш Советник"</span> <br>
                         Адрес: <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress"><span itemprop="addressRegion">г. Оренбург</span>, <span itemprop="streetAddress">ул. Салмышская, д. 34/5</span>, 2 этаж, офис № 207</span><br>
                         Телефон: <span itemprop="telephone">+7 (3532) 608-464</span><br>
                         ИНН: <span>5609187971</span> <br>
                         КПП: <span>560901001</span> <br> 
-                        ОГРН: <span>1175658024299</span><br>
-                        Время работы: 
-                        <div>Понедельник: <time> 9:00 </time> - <time> 19:00 </time></div>
-                        <div>Вторник: <time> 9:00 </time> - <time> 19:00 </time></div>
-                        <div>Среда: <time> 9:00 </time> - <time> 19:00 </time></div>
-                        <div>Четверг: <time> 9:00 </time> - <time> 19:00 </time></div>
-                        <div>Пятница: <time> 9:00 </time> - <time> 19:00 </time></div>
-                        <div>Суббота: <time> 9:00 </time> - <time> 19:00 </time></div>
-                        <div>Воскресенье: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        ОГРН: <span>1175658024299</span><br>Время работы:
+                        <time itemprop="openingHours" datetime="Mo, Tu, We, Th, Fr 09:00-19:00"><span>Пн-Пт: с 09:00 до 19:00</span></time><br>
+                        Цены: <span itemprop="priceRange">0 - 100 000 ₽</span><br>
+                        <img src="~assets/img/logo.png" itemprop="image" width="50px">                 
+                        
                     </div>
                 </div>
           </div>

@@ -1,10 +1,10 @@
 <template>
     <nav itemscope itemtype="http://schema.org/BreadcrumbList">
         <div class="nav-sahar" itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem" v-for="breadcrumb in bread" :key="breadcrumb.id">
-            <nuxt-link class="link" v-bind:class="{ active: !breadcrumb.seen }" itemprop="item" v-bind:title="breadcrumb.name" v-bind:to="breadcrumb.link">
-                <span itemprop="name"> {{ resizeBread(breadcrumb.name) }}</span>
-                <meta itemprop="position" v-bind:content="breadcrumb.id">
+            <nuxt-link class="link" v-bind:class="{ active: !breadcrumb.seen }" itemscope itemtype="http://schema.org/Thing" itemprop="item" v-bind:title="breadcrumb.name" v-bind:to="breadcrumb.link">
+                <span itemprop="name"> {{ resizeBread(breadcrumb.name) }}</span> 
             </nuxt-link>
+            <meta itemprop="position" v-bind:content="breadcrumb.id">
             <span v-if="breadcrumb.seen" class="slash">
                 <svg fill="#000000" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
