@@ -25,11 +25,9 @@ export default {
 </script>
 
 <style>
-
 body {
   margin: 0;
   font-size: 14px;
   font-family: Roboto, RobotoDraft, Helvetica, Arial;
-  src: url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="content content-background">
+  <div id ="contentPlus" v-bind:class="{ 'content-plus-lazy-background': isActive }" class="content content-background">
       <div class="gradient">
       <div class="container">
           <div class="content content-plus">
@@ -29,7 +29,29 @@
 </template>
 
 <script>
+export default {
+    data () {
+        return {
+            isActive: false
+        }
+    },
+    created() {
+        if (process.browser) {    
+			 window.addEventListener('scroll', this.handleScroll)
+        }
+    },
+    methods: {
+		handleScroll (event) {
+            // почему так высчитывается так до конца и не разобрался, но математическим путем опряделяется верно. 40 пиксей добавил, чтобы загрузка происхода еще до прокрутки до самого низа
+            let qwe = contentPlus.getBoundingClientRect();
 
+            if ( qwe.top < window.innerHeight && !this.isActive) {
+                this.isActive = true
+            }
+
+		}
+    }
+}
 </script>
  
 <style scoped>
@@ -73,11 +95,14 @@
     height: 553px;
 	background-color: #f7f9fa;
 	padding: 0;
-    /* background: url(~assets/img/fon6.jpg)  center center / cover no-repeat, linear-gradient(to right, rgba(9, 5, 47, .85) 0%, rgba(49, 29, 94, .85) 100%); */
-    background: url(~assets/img/fon6.jpg)  center center / cover no-repeat;
+    
     opacity: 1;
     background-position: center center / cover;
     background-repeat: no-repeat;
+}
+
+.content-plus-lazy-background {
+    background: url(~assets/img/fon6.jpg)  center center / cover no-repeat;
 }
 .digits-wrapper {
     display: flex;

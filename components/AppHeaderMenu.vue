@@ -63,7 +63,8 @@
         <div class="">
             <AppModalCall v-if="showModal" v-on:close="showModal = false"></AppModalCall>
         </div>
-    </div>
+        </div>
+
   </header>
 </template>
 
@@ -73,11 +74,15 @@ import AppModalCall  from '~/components/AppModalCall.vue'
 export default {
     data () {
       return {
-        showModal: false
+        showModal: false,
+        isActive: false
       }
     },
     components: {
         AppModalCall
+    },
+    mounted: function () {
+        this.isActive = true
     }
   }
 </script>

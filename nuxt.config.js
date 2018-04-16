@@ -12,9 +12,6 @@ module.exports = {
   ** Common headers are already provided by @nuxtjs/pwa preset
   */
   head: {
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700' }
-    ],
     meta: [
       { name: 'yandex-verification', content: 'd018a734873d45f8' },
       { name: 'google-site-verification', content: 'QaGfxx4EGsb75n5G-2TS3wr8_PF4A2SkcfsqjMn44lE' }

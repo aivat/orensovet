@@ -47,7 +47,7 @@
   }
 </script>
  
-<style scoped>
+<style>
 .content-wrap {
   display: block;
 }

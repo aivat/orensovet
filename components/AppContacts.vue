@@ -14,7 +14,15 @@
                         Телефон: <span itemprop="telephone">+7 (3532) 608-464</span><br>
                         ИНН: <span>5609187971</span> <br>
                         КПП: <span>560901001</span> <br> 
-                        ОГРН: <span>1175658024299</span>
+                        ОГРН: <span>1175658024299</span><br>
+                        Время работы: 
+                        <div>Понедельник: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        <div>Вторник: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        <div>Среда: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        <div>Четверг: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        <div>Пятница: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        <div>Суббота: <time> 9:00 </time> - <time> 19:00 </time></div>
+                        <div>Воскресенье: <time> 9:00 </time> - <time> 19:00 </time></div>
                     </div>
                 </div>
           </div>

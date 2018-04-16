@@ -37,6 +37,7 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 
 .header {
     box-shadow: 0 -1px 8px rgba(0,0,0,.3);
