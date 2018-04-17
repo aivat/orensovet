@@ -80,7 +80,10 @@ export default {
     },
     head () {
         return {
-            title: this.articleTest.title
+            title: this.articleTest.title,
+            meta: [
+                { hid: 'description', name: 'description', content: this.articleTest.annotation }
+            ]
         }     
     },
     methods: {
