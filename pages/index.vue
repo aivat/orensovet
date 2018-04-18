@@ -30,7 +30,12 @@
         return {
             title: 'ОренСовет - юридическая компания Оренбурга',
             meta: [
-                { hid: 'description', name: 'description', content: 'ОренСовет - ведущая юридическая компания в Оренбурге, оказывающая услуги по представлению интересов в суде, составлению договоров, оформлению недвижимости и по другим юридическим вопросам.' }
+                { hid: 'description', name: 'description', content: 'ОренСовет - ведущая юридическая компания в Оренбурге, оказывающая услуги по представлению интересов в суде, составлению договоров, оформлению недвижимости и по другим юридическим вопросам.' },
+                { hid: 'keywords', name: 'keywords', content: 'юрист оренбург бесплатный юрист онлайн консультация юриста юридические услуги оренбург вопрос юристу' },
+                { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'ОренСовет - юридическая компания' },
+                { hid: 'og:title', property: 'og:title', content: 'ОренСовет - юридическая компания' },
+                { hid: 'og:description', property: 'og:description', content: 'ОренСовет - ведущая юридическая компания в Оренбурге, оказывающая услуги по представлению интересов в суде, составлению договоров, оформлению недвижимости и по другим юридическим вопросам.' },
+                { hid: 'og:image', property: 'og:image', content: this.path('vash_sovetnik_orenburg') }
             ]
         }     
     },
@@ -46,6 +51,9 @@
     methods: {
       _toggleNetworkStatus ({ type }) {
         this.online = type === 'online'
+      },
+      path(name) {
+          return require('~/assets/img/team/' + name + '.jpg')
       }
     },
     destroyed () {

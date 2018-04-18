@@ -14,7 +14,11 @@ export default {
       return {
           title: 'Цены',
           meta: [
-              { hid: 'description', name: 'description', content: 'Здесь вы можете ознакомиться с актуальными ценами на юридические услуги, а так же оценить весь спектр предоставляемых услуг.' }
+              { hid: 'description', name: 'description', content: 'Здесь вы можете ознакомиться с актуальными ценами на юридические услуги, а так же оценить весь спектр предоставляемых услуг.' },
+              { hid: 'keywords', name: 'keywords', content: 'стоимость юридических услуг юриста в оренбурге' },
+              { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Цены | ОренСовет' },
+              { hid: 'og:title', property: 'og:title', content: 'Цены | ОренСовет' },
+              { hid: 'og:description', property: 'og:description', content: 'Здесь вы можете ознакомиться с актуальными ценами на юридические услуги, а так же оценить весь спектр предоставляемых услуг.' }
           ]
       }     
     },

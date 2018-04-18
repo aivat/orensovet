@@ -21,7 +21,11 @@
       return {
           title: 'Команда',
           meta: [
-              { hid: 'description', name: 'description', content: 'Управляющие партнеры, ведущие специалисты и юрисконсульты, их регалии и достижения.' }
+              { hid: 'description', name: 'description', content: 'Управляющие партнеры, ведущие специалисты и юрисконсульты, их регалии и достижения.' },
+              { hid: 'keywords', name: 'keywords', content: 'резюме регалии юриста управляющие партнеры' },
+              { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Команда | ОренСовет' },
+              { hid: 'og:title', property: 'og:title', content: 'Команда | ОренСовет' },
+              { hid: 'og:description', property: 'og:description', content: 'Управляющие партнеры, ведущие специалисты и юрисконсульты, их регалии и достижения.' }  
           ]
       }     
     },
@@ -29,15 +33,6 @@
       if (window.innerWidth>500) {
         window.scrollTo(0,500)
       } else window.scrollTo(0,100)
-    },
-    methods: {
-      _toggleNetworkStatus ({ type }) {
-        this.online = type === 'online'
-      }
-    },
-    destroyed () {
-      window.removeEventListener('offline', this._toggleNetworkStatus)
-      window.removeEventListener('online', this._toggleNetworkStatus)
     }
   }
 </script>

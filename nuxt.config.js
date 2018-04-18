@@ -14,7 +14,10 @@ module.exports = {
   head: {
     meta: [
       { name: 'yandex-verification', content: 'd018a734873d45f8' },
-      { name: 'google-site-verification', content: 'QaGfxx4EGsb75n5G-2TS3wr8_PF4A2SkcfsqjMn44lE' }
+      { name: 'google-site-verification', content: 'QaGfxx4EGsb75n5G-2TS3wr8_PF4A2SkcfsqjMn44lE' },
+      { hid: 'og:locale', property: 'og:locale', content: 'ru_ru' },
+      { hid: 'og:site_name', property: 'og:site_name', content: 'OrenSovet' },
+      { name: 'application-name', content: 'OrenSovet' }
     ]
   },
   /*

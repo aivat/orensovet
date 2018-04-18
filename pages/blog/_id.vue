@@ -12,15 +12,12 @@
                         <header class="article-header-article">
                             <time> {{ articleTest.date }}</time>
                             <div class="article-wrap-author">
-                                <span class="article-logo-author">
-                                    <!-- {{ reversedLogoName(articleTest.author) }} -->
-                                    {{ logo }}
-                                </span>
+                                <span class="article-logo-author"> {{ logo }} </span>
                                 <span> {{ articleTest.author }}</span>
                             </div>
                         </header>
-                        <h1 class="article-h1">{{ articleTest.title }}</h1>
-                        <div class="article-annotation">{{ articleTest.annotation }}</div>
+                        <h1 class="article-h1"> {{ articleTest.title }} </h1>
+                        <div class="article-annotation"> {{ articleTest.annotation }} </div>
                         <div class="article-text" v-html="articleTest.content"></div>
                     </article>
                 </div>
@@ -87,7 +84,11 @@ export default {
         return {
             title: this.articleTest.title,
             meta: [
-                { hid: 'description', name: 'description', content: this.articleTest.annotation }
+                { hid: 'description', name: 'description', content: this.articleTest.annotation },
+                { hid: 'keywords', name: 'keywords', content: 'юридическая практика в оренбурге ' + this.articleTest.keywords },
+                { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.articleTest.title },
+                { hid: 'og:title', property: 'og:title', content: this.articleTest.title },
+                { hid: 'og:description', property: 'og:description', content: this.articleTest.annotation } 
             ]
         }     
     },
@@ -199,7 +200,7 @@ export default {
 .article-header-article {
     display: flex;
     font-weight: 300;
-    color: rgb(129, 129, 129);
+    color: rgb(110, 110, 110);
     font-size: 12px;
 }
 .article-article {
@@ -223,7 +224,7 @@ export default {
     text-align: center;
     height: 14px;
     width: 16px;
-    background-color: #FF4100;
+    background-color: #DD2C00;
     justify-content: center;
     align-items: center;
     border-radius: 8px;

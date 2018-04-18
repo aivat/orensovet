@@ -15,7 +15,11 @@ export default {
       return {
           title: 'Контакты',
           meta: [
-              { hid: 'description', name: 'description', content: 'Контактные данные и карточка организации юридической компании ОренСовет.' }
+              { hid: 'description', name: 'description', content: 'Контактные данные и карточка организации юридической компании ОренСовет.' },
+              { hid: 'keywords', name: 'keywords', content: 'телефон юрист оренбург контакты' },
+              { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Контакты | ОренСовет' },
+              { hid: 'og:title', property: 'og:title', content: 'Контакты | ОренСовет' },
+              { hid: 'og:description', property: 'og:description', content: 'Контактные данные и карточка организации юридической компании ОренСовет.' }
           ]
       }     
     },

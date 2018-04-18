@@ -103,11 +103,11 @@ nav {
     text-decoration: underline;
 }
 .slash>svg {
-    fill: #94999f;
+    fill: rgb(104, 110, 116);
 }
 
 .active {
-   color: #94999f;
+   color: rgb(104, 110, 116);
 }
 
 @media all and (min-width: 500px) {

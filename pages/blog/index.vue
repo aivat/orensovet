@@ -15,18 +15,12 @@
                                 <header>
                                     <time> {{ article.date }}</time>
                                     <div class="wrap-author">
-                                        <span class="logo-author">
-                                            {{ reversedLogoName(article.author) }}
-                                        </span>
-                                        <span> {{ article.author }}</span>
+                                        <span class="logo-author">{{ reversedLogoName(article.author) }}</span>
+                                        <span>{{ article.author }}</span>
                                     </div>
                                 </header>
-                                <section>
-                                    {{ article.title }}
-                                </section>
-                                <article class="text">
-                                    {{ article.annotation }}
-                                </article>
+                                <section>{{ article.title }}</section>
+                                <article class="text">{{ article.annotation }}</article>
                             </nuxt-link>
                         </li>
                     </ul>
@@ -103,7 +97,11 @@ export default {
         return {
             title: 'Блог',
             meta: [
-                { hid: 'description', name: 'description', content: 'Обзор юридической практики специалистов компании «ОренСовет» при решении различных правовых вопросов.' }
+                { hid: 'description', name: 'description', content: 'Обзор юридической практики специалистов компании «ОренСовет» при решении различных правовых вопросов.' },
+                { hid: 'keywords', name: 'keywords', content: 'судебная практика юристов обзор юридической практики в оренбурге блог' },
+                { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Блог | ОренСовет' },
+                { hid: 'og:title', property: 'og:title', content: 'Блог | ОренСовет' },
+                { hid: 'og:description', property: 'og:description', content: 'Обзор юридической практики специалистов компании «ОренСовет» при решении различных правовых вопросов.' }  
             ]
         }     
     },
@@ -265,7 +263,7 @@ a {
 header {
     display: flex;
     font-weight: 300;
-    color: rgb(129, 129, 129);
+    color: rgb(110, 110, 110);
     font-size: 12px;
     /* align-items: flex-start; */
     /* justify-content: space-between; */
@@ -291,7 +289,7 @@ header, section, article {
     text-align: center;
     height: 14px;
     width: 16px;
-    background-color: #FF4100;
+    background-color: #DD2C00;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
