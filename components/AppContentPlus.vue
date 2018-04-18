@@ -40,10 +40,14 @@ export default {
 			 window.addEventListener('scroll', this.handleScroll)
         }
     },
+    destroyed: function () {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
     methods: {
 		handleScroll (event) {
             // почему так высчитывается так до конца и не разобрался, но математическим путем опряделяется верно. 40 пиксей добавил, чтобы загрузка происхода еще до прокрутки до самого низа
-            let qwe = contentPlus.getBoundingClientRect();
+            
+            let qwe = document.getElementById('contentPlus').getBoundingClientRect();
 
             if ( qwe.top < window.innerHeight && !this.isActive) {
                 this.isActive = true

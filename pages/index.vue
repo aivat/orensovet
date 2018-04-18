@@ -1,5 +1,6 @@
 <template>
   <div class="content-wrap">
+    <AppHeaderMenuMain/>
     <AppContentServices/>
     <AppContentPlus/>
     <AppContentReviews/>
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+  import AppHeaderMenuMain from '~/components/AppHeaderMenuMain.vue'
   import AppContentServices from '~/components/AppContentServices.vue'
   import AppContentPlus from '~/components/AppContentPlus.vue'
   import AppContentJobs from '~/components/AppContentJobs.vue'
@@ -17,14 +19,20 @@
 
   export default {
     components: {
+      AppHeaderMenuMain,
       AppContentServices,
       AppContentPlus,
       AppContentJobs,
       AppContentReviews,
       AppLastArticle
     },
-    head: {
-      title: 'Ваш СОВЕТНИК - Юридическое бюро'
+    head () {
+        return {
+            title: 'ОренСовет - юридическая компания Оренбурга',
+            meta: [
+                { hid: 'description', name: 'description', content: 'ОренСовет - ведущая юридическая компания в Оренбурге, оказывающая услуги по представлению интересов в суде, составлению договоров, оформлению недвижимости и по другим юридическим вопросам.' }
+            ]
+        }     
     },
     mounted () {
       if (!window.navigator) {

@@ -1,4 +1,6 @@
 <template>
+<div class="content-wrap">
+<AppHeaderMenu/>
   <div class="article-content article-content-background">
       <div class="article-container">
           <div class="article-content article-content-article">
@@ -35,9 +37,11 @@
           </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
+import AppHeaderMenu from '~/components/AppHeaderMenu.vue'
 import AppBreadcrumbs from '~/components/AppBreadcrumbs.vue'
 import axios from 'axios'
 
@@ -68,7 +72,8 @@ export default {
         }
     },
     components: {
-        AppBreadcrumbs
+        AppBreadcrumbs,
+        AppHeaderMenu
     },
     computed: {
         resourseUrl() {
@@ -140,6 +145,9 @@ export default {
 </script>
  
 <style>
+.content-wrap {
+  display: block;
+}
 .article-loader-header, .article-loader-h1, .article-loader-text {
     background-color: rgba(14, 127, 202, 0.315);
     border-radius: 4px;

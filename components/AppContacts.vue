@@ -6,6 +6,7 @@
                     <AppBreadcrumbs :bread="breadcrumbs"></AppBreadcrumbs>
                 </div>
                 <div class="contacts-wrapper">
+                    <h1>Контакты</h1>
                     <div class="contacts-wrapper-wrapper" itemscope itemtype="http://schema.org/LegalService">
                         <div class="contacts-wrapper-header">
                             <div class="contacts-wrapper-header-wrap">
@@ -213,12 +214,14 @@ export default {
     padding: 10px 5px;
 }
 
-h2 {
-    font-size: 18px;
+h1 {
+    font-size: 20px;
     margin: 0;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 28px;
+    margin-bottom: 10px;
 }
+
 
 .text {
     margin: 16px 0;

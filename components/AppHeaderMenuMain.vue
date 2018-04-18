@@ -37,16 +37,16 @@
             </div>
             <div class="header-logo">
 				<div class="header-logo-name">
-                    <div class="header-logo-name-h1">
+                    <h1 class="header-logo-name-h1">
                             ЮРИДИЧЕСКАЯ КОМПАНИЯ
                         <strong class="header-logo-name-title">
                             ОРЕНСОВЕТ
                         </strong>
-                    </div>
+                    </h1>
                     <img src="~assets/img/logo2.png" alt="ВАШ ЮРИСТ">
-                    <div class="header-logo-name-h2">
+                    <h2 class="header-logo-name-h2">
                         БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
-                    </div>
+                    </h2>
 				</div>
                 <div class="call-wrap">
                         <div class="call" @click="showModal = true">
@@ -56,11 +56,11 @@
                             </svg>
                             Заказать звонок
                         </div>
-                </div>
-                <div class="header-logo-slogan header-logo-slogan-slogan">
+                </div>   
+		  		<div class="header-logo-slogan">
 			  		Главное достояние юриста — способность всегда быть уверенным в себе.
                     Мы уверены в своей работе, поэтому гарантируем логичное решение вашей проблемы. 
-			  	</div>  
+			  	</div>
             </div>
         </div>
         <div id="start"></div>
@@ -151,7 +151,7 @@ export default {
 
 .header-background {
     background: url(~assets/img/fon3.jpg) center center / cover no-repeat;
-    height: 450px;
+    height: 650px;
 }
 
 .header-logo {
@@ -161,9 +161,7 @@ export default {
     flex-direction: column;
     align-items: center;
 }
-.header-logo-slogan-slogan {
-    display: none;
-}
+
 .header-logo-name {
     display: flex;
     flex-direction: column;
@@ -333,16 +331,9 @@ li>a {
 }
 
 @media (min-width: 1000px) {
-
     .header-logo-slogan {
         width: 800px;
         margin-top: 20px;
-    }
-    .header-background {
-        height: 520px;
-    }
-    .header-logo-slogan-slogan {
-        display: block;
     }
     .header-background {
         height: 580px;

@@ -1,18 +1,29 @@
 <template>
   <div class="content-wrap" id="teamStart">
-    <AppTeam/>
+    <AppHeaderMenu/>
+    <AppTeam/>   
   </div>
 </template>
 
 <script>
   import AppTeam from '~/components/AppTeam.vue'
+  import AppHeaderMenu from '~/components/AppHeaderMenu.vue'
 
   export default {
     components: {
-      AppTeam
+      AppTeam,
+      AppHeaderMenu
     },
     head: {
       title: 'Команда'
+    },
+    head () {
+      return {
+          title: 'Команда',
+          meta: [
+              { hid: 'description', name: 'description', content: 'Управляющие партнеры, ведущие специалисты и юрисконсульты, их регалии и достижения.' }
+          ]
+      }     
     },
     beforeUpdate: function () {
       if (window.innerWidth>500) {

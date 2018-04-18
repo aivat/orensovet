@@ -1,4 +1,6 @@
 <template>
+<div class="content-wrap">
+    <AppHeaderMenu/>
   <div class="content content-background">
       <div class="container">
           <div class="content content-blog">
@@ -6,6 +8,7 @@
                     <AppBreadcrumbs :bread="breadcrumbs"></AppBreadcrumbs>
                 </div>
                 <div class="blog-wrapper" >
+                    <h1>Блог</h1>
                     <ul>
                         <li v-for="article in articles" :key="article.id">
                             <nuxt-link v-bind:to="reversedLink(article.id, article.title)">
@@ -51,9 +54,11 @@
           </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script>
+import AppHeaderMenu from '~/components/AppHeaderMenu.vue'
 import AppBreadcrumbs from '~/components/AppBreadcrumbs.vue'
 import axios from 'axios'
 
@@ -88,10 +93,19 @@ export default {
         }
     },
     components: {
-        AppBreadcrumbs
+        AppBreadcrumbs,
+        AppHeaderMenu
     },
     head: {
       title: 'Блог'
+    },
+    head () {
+        return {
+            title: 'Блог',
+            meta: [
+                { hid: 'description', name: 'description', content: 'Обзор юридической практики специалистов компании «ОренСовет» при решении различных правовых вопросов.' }
+            ]
+        }     
     },
     computed: {
         resourseUrl() {
@@ -104,6 +118,9 @@ export default {
         }
         this.fetchData()
         // this.setGetTimeOut() 
+    },
+    destroyed: function () {
+        window.removeEventListener('scroll', this.handleScroll);
     },
     methods: {
         setGetTimeOut() {
@@ -166,6 +183,9 @@ export default {
 </script>
  
 <style scoped>
+.content-wrap {
+  display: block;
+}
 .list-loader {
     color: black;
 }
@@ -208,11 +228,12 @@ export default {
     padding: 10px 5px;
 }
 
-h2 {
+h1 {
     font-size: 20px;
     margin: 0;
     font-weight: 500;
     line-height: 28px;
+    margin-bottom: 10px;
 }
 
 .text {
