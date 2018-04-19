@@ -31,7 +31,7 @@
             title: 'ОренСовет - юридическая компания Оренбурга',
             meta: [
                 { hid: 'description', name: 'description', content: 'ОренСовет - ведущая юридическая компания в Оренбурге, оказывающая услуги по представлению интересов в суде, составлению договоров, оформлению недвижимости и по другим юридическим вопросам.' },
-                { hid: 'keywords', name: 'keywords', content: 'юрист оренбург бесплатный юрист онлайн консультация юриста юридические услуги оренбург вопрос юристу' },
+                { hid: 'keywords', name: 'keywords', content: 'юрист оренбург бесплатный юрист онлайн юридическая консультация юриста юридические услуги оренбург вопрос юристу' },
                 { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'ОренСовет - юридическая компания' },
                 { hid: 'og:title', property: 'og:title', content: 'ОренСовет - юридическая компания' },
                 { hid: 'og:description', property: 'og:description', content: 'ОренСовет - ведущая юридическая компания в Оренбурге, оказывающая услуги по представлению интересов в суде, составлению договоров, оформлению недвижимости и по другим юридическим вопросам.' },
@@ -39,26 +39,10 @@
             ]
         }     
     },
-    mounted () {
-      if (!window.navigator) {
-        this.online = false
-        return
-      }
-      this.online = Boolean(window.navigator.onLine)
-      window.addEventListener('offline', this._toggleNetworkStatus)
-      window.addEventListener('online', this._toggleNetworkStatus)
-    },
     methods: {
-      _toggleNetworkStatus ({ type }) {
-        this.online = type === 'online'
-      },
       path(name) {
           return require('~/assets/img/team/' + name + '.jpg')
       }
-    },
-    destroyed () {
-      window.removeEventListener('offline', this._toggleNetworkStatus)
-      window.removeEventListener('online', this._toggleNetworkStatus)
     }
   }
 </script>

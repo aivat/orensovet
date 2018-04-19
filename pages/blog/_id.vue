@@ -74,7 +74,7 @@ export default {
     },
     computed: {
         resourseUrl() {
-			return 'http://lba.ru/api/v1/articles/' + this.idArticle
+			return 'https://orensovet.ru/api/v1/articles/' + this.idArticle
 		}
     },
     created(){
