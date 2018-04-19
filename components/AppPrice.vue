@@ -251,6 +251,8 @@ h1 {
 
 .text-wrapper, .table-wrapper {
     padding: 0 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
 .table-price {

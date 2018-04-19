@@ -5,7 +5,7 @@
                 <div class="breadcrumbs-wrapper">
                     <AppBreadcrumbs :bread="breadcrumbs"></AppBreadcrumbs>
                 </div>
-                <div class="contacts-wrapper">
+                <div class="contacts-wrapper contacts-wrapper-main">
                     <h1>Контакты</h1>
                     <div class="contacts-wrapper-wrapper" itemscope itemtype="http://schema.org/LegalService">
                         <div class="contacts-wrapper-header">
@@ -17,7 +17,7 @@
                                     Юридическая компания
                                 </div>
                             </div>
-                            <img src="~assets/img/logo.png" width="70px" height="70px" itemprop="image">   
+                            <img alt="Логотип юридической компании ОренСовет" src="~assets/img/logo.png" width="70px" height="70px" itemprop="image">   
                         </div>
                         <div class="contacts-wrapper-main">
                             <div>
@@ -308,12 +308,12 @@ a>svg {
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-    color: rgb(0,152,223);
+    color: rgb(0, 121, 179);
     /* justify-content: center; */
     /* width: 100px; */
 }
 .soc:hover {
-color: #0070ba;
+    color: rgb(1, 80, 133);
 }
 
 @media all and (min-width: 500px) {
