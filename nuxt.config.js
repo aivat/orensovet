@@ -7,6 +7,7 @@ module.exports = {
   build: {
     vendor: ['axios']
   },
+  path: '/blog', component: 'blog/_index',
   cache: true,
   /*
   ** Headers
@@ -53,7 +54,7 @@ module.exports = {
   ],
   generate: {
     routes: function () {
-      return axios.get('https://orensovet.ru/api/v1/articlesall?all=1')
+      return axios.get('http://lba.ru/api/v1/articlesall?all=1')
       .then((response) => {
           return response.data.map((articles) => {
             return '/blog/article-' + articles.id + '-' + articles.title.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,

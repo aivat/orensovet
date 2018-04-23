@@ -49,7 +49,7 @@ export default {
         articles: [],
         loading: true,
         error: false,
-        resourseUrl: 'https://orensovet.ru/api/v1/articlesindex?all',
+        resourseUrl: 'http://lba.ru/api/v1/articlesindex?all',
         swiperOption: {
           slidesPerView: 1,
           spaceBetween: 30,

@@ -6,22 +6,24 @@
           <div class="article-content article-content-article">
                 <div class="article-breadcrumbs-wrapper">
                     <AppBreadcrumbs :bread="breadcrumbs"></AppBreadcrumbs>
-                </div>
-                <div class="article-blog-wrapper" v-if="!loading">
+                </div>  
+                {{ test }}  <br>  
+                {{ testqwe }}      
+                <div class="article-blog-wrapper">
                     <article class="article-article">
                         <header class="article-header-article">
-                            <time> {{ articleTest.date }}</time>
+                            <time> {{ article.date }}</time>
                             <div class="article-wrap-author">
                                 <span class="article-logo-author"> {{ logo }} </span>
-                                <span> {{ articleTest.author }}</span>
+                                <span> {{ article.author }}</span>
                             </div>
                         </header>
-                        <h1 class="article-h1"> {{ articleTest.title }} </h1>
-                        <div class="article-annotation"> {{ articleTest.annotation }} </div>
-                        <div class="article-text" v-html="articleTest.content"></div>
+                        <h1 class="article-h1"> {{ article.title }} </h1>
+                        <div class="article-annotation"> {{ article.annotation }} </div>
+                        <div class="article-text" v-html="article.content"></div>
                     </article>
                 </div>
-                <div class="list-loader article-blog-wrapper" v-if="loading">
+                <!-- <div class="list-loader article-blog-wrapper" v-if="loading">
                     <article class="article-article">
                         <header class="article-header-article article-loader-header">
                         </header>
@@ -30,7 +32,7 @@
                         <div class="article-text article-loader-text" >
                         </div>
                     </article>
-                </div>
+                </div> -->
           </div>
     </div>
   </div>
@@ -47,26 +49,37 @@ export default {
         return {
             idArticle: '',
             loading: true,
-			error: false,
-            articleTest: '',
-            logo:'',
-            breadcrumbs: [{
-                id: 1,
-                name: 'Главная',
-                link: '/',
-                seen: true
-            }, {
-                id: 2,
-                name: 'Блог',
-                link: '/blog',
-                seen: true
-            }, {
-                id: 3,
-                name: '',
-                link: '',
-                seen: false
-            }]
+            test: '',
+            testqwe: ''
         }
+    },
+    asyncData ({ params, error }) {
+        let qwe = params.id.split('-')[1]
+        return axios.get(`http://lba.ru/api/v1/articles/${qwe}`)
+        .then((response) => {
+            return { 
+                article: response.data,
+                breadcrumbs: [{
+                    id: 1,
+                    name: 'Главная',
+                    link: '/',
+                    seen: true
+                }, {
+                    id: 2,
+                    name: 'Блог',
+                    link: '/blog',
+                    seen: true
+                }, {
+                    id: 3,
+                    name: '',
+                    link: '',
+                    seen: false
+                }]
+            }
+        })
+        .catch((e) => {
+            error({ statusCode: 404, message: 'Страница не найдена' })
+        })
     },
     components: {
         AppBreadcrumbs,
@@ -74,21 +87,35 @@ export default {
     },
     computed: {
         resourseUrl() {
-			return 'https://orensovet.ru/api/v1/articles/' + this.idArticle
-		}
+			return 'http://lba.ru/api/v1/articles/' + this.idArticle
+        },
+        logo() {
+            let newLogo = ''
+            this.article.author.split(' ').map(function(name) {
+                newLogo = newLogo + name[0].toUpperCase()
+            })
+            return newLogo
+        }
     },
-    created(){
-        this.fetchData()
+    created: function () {
+        // this.fetchData()
+        this.breadcrumbs[2].name = this.article.title
+        this.breadcrumbs[2].link = this.$route.params.id
+        this.test = this.$route.params.id
+        this.testqwe = this.$route.params.fullPath
+        console.log('this.$route.params.id=',this.$route.params)
+        console.log('this.$route.params.idFull=',this.$route.fullPath)
+        console.log('Теущий маршрут =', this.$router.currentRoute)
     },
     head () {
         return {
-            title: this.articleTest.title,
+            title: this.article.title,
             meta: [
-                { hid: 'description', name: 'description', content: this.articleTest.annotation },
-                { hid: 'keywords', name: 'keywords', content: 'юридическая практика в оренбурге ' + this.articleTest.keywords },
-                { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.articleTest.title },
-                { hid: 'og:title', property: 'og:title', content: this.articleTest.title },
-                { hid: 'og:description', property: 'og:description', content: this.articleTest.annotation } 
+                { hid: 'description', name: 'description', content: this.article.annotation },
+                { hid: 'keywords', name: 'keywords', content: 'юридическая практика в оренбурге ' + this.article.keywords },
+                { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: this.article.title },
+                { hid: 'og:title', property: 'og:title', content: this.article.title },
+                { hid: 'og:description', property: 'og:description', content: this.article.annotation } 
             ]
         }     
     },

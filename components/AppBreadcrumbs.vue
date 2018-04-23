@@ -70,7 +70,7 @@ export default {
                         return name.substring(0,21) + ' ...'
                     } else return name
                 }
-            }
+            } else return name
         }
     }
 }

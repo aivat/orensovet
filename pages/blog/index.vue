@@ -11,7 +11,8 @@
                     <h1>Блог</h1>
                     <ul>
                         <li v-for="article in articles" :key="article.id">
-                            <nuxt-link v-bind:to="reversedLink(article.id, article.title)">
+                            <!-- <nuxt-link v-bind:to="reversedLink(article.id, article.title)"> -->
+                            <nuxt-link v-bind:to="{ name: 'blog-id', params: { id:reversedLink(article.id, article.title) } }">
                                 <header>
                                     <time> {{ article.date }}</time>
                                     <div class="wrap-author">
@@ -107,7 +108,7 @@ export default {
     },
     computed: {
         resourseUrl() {
-			return 'https://orensovet.ru/api/v1/articles?lastArticle='+this.lastArticle
+			return 'http://lba.ru/api/v1/articles?lastArticle='+this.lastArticle
 		}
     },
     created() {
@@ -115,6 +116,7 @@ export default {
 			 window.addEventListener('scroll', this.handleScroll)
         }
         this.fetchData()
+        console.log('Теущий маршрут =', this.$router.currentRoute)
         // this.setGetTimeOut() 
     },
     destroyed: function () {
@@ -134,7 +136,7 @@ export default {
         },
         reversedLink(id, title) {
             let text = id + '-' + title
-            return 'blog/article-' + text.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,
+            return '/article-' + text.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,
                 function (all, ch, space, words, i) {
                     if (space || words) {
                         return space ? '-' : '';
