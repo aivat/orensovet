@@ -28,47 +28,47 @@ export default {
           {
             id: 1,
             title: 'СЕМЕЙНЫЕ СПОРЫ',
-            link: 'blog/article-1-semeynye-spory#start'
+            link: 'blog/article-1-semeynye-spory'
           },
           {
             id: 2,
             title: 'ВЗЫСКАНИЕ ДОЛГОВ',
-            link: 'blog/article-2-vzyskanie-dolgov#start'
+            link: 'blog/article-2-vzyskanie-dolgov'
           },
           {
             id: 3,
             title: 'КАДАСТРОВЫЕ СПОРЫ',
-            link: 'blog/article-3-kadastrovye-spory#start'
+            link: 'blog/article-3-kadastrovye-spory'
           },
           {
             id: 4,
             title: 'СПОРЫ С БАНКАМИ',
-            link: 'blog/article-4-spory-s-bankami#start'
+            link: 'blog/article-4-spory-s-bankami'
           },
           {
             id: 5,
             title: 'СТРАХОВЫЕ СПОРЫ',
-            link: 'blog/article-5-strahovye-spory#start'
+            link: 'blog/article-5-strahovye-spory'
           },
           {
             id: 6,
             title: 'ЖИЛИЩНЫЕ СПОРЫ',
-            link: 'blog/article-6-zhilishchnye-spory#start'
+            link: 'blog/article-6-zhilishchnye-spory'
           },
           {
             id: 7,
             title: 'CПОРЫ С ЗАСТРОЙЩИКАМИ',
-            link: 'blog/article-7-spory-s-zastroyshchikami#start'
+            link: 'blog/article-7-spory-s-zastroyshchikami'
           },
           {
             id: 8,
             title: 'ЗАЩИТА ПРАВ ПОТРЕБИТЕЛЕЙ',
-            link: 'blog/article-8-zashchita-prav-potrebiteley#start'
+            link: 'blog/article-8-zashchita-prav-potrebiteley'
           },
           {
             id: 9,
             title: 'ОФОРМЛЕНИЕ НЕДВИЖИМОСТИ',
-            link: 'blog/article-9-oformlenie-nedvizhimosti#start'
+            link: 'blog/article-9-oformlenie-nedvizhimosti'
           }
         ]
     }

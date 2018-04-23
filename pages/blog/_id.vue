@@ -6,9 +6,7 @@
           <div class="article-content article-content-article">
                 <div class="article-breadcrumbs-wrapper">
                     <AppBreadcrumbs :bread="breadcrumbs"></AppBreadcrumbs>
-                </div>  
-                {{ test }}  <br>  
-                {{ testqwe }}      
+                </div>    
                 <div class="article-blog-wrapper">
                     <article class="article-article">
                         <header class="article-header-article">
@@ -49,8 +47,7 @@ export default {
         return {
             idArticle: '',
             loading: true,
-            test: '',
-            testqwe: ''
+            test: ''
         }
     },
     asyncData ({ params, error }) {
@@ -86,9 +83,6 @@ export default {
         AppHeaderMenu
     },
     computed: {
-        resourseUrl() {
-			return 'http://lba.ru/api/v1/articles/' + this.idArticle
-        },
         logo() {
             let newLogo = ''
             this.article.author.split(' ').map(function(name) {
@@ -98,14 +92,8 @@ export default {
         }
     },
     created: function () {
-        // this.fetchData()
         this.breadcrumbs[2].name = this.article.title
-        this.breadcrumbs[2].link = this.$route.params.id
-        this.test = this.$route.params.id
-        this.testqwe = this.$route.params.fullPath
-        console.log('this.$route.params.id=',this.$route.params)
-        console.log('this.$route.params.idFull=',this.$route.fullPath)
-        console.log('Теущий маршрут =', this.$router.currentRoute)
+        this.breadcrumbs[2].link = { name: 'blog-id', params: { id: this.reversedLink(this.article.id, this.article.title) } }
     },
     head () {
         return {
@@ -120,13 +108,6 @@ export default {
         }     
     },
     methods: {
-        reversedLogoName() {
-            let newLogo = ''
-            this.articleTest.author.split(' ').map(function(name) {
-                    newLogo = newLogo + name[0].toUpperCase()
-            })
-            this.logo = newLogo
-        },
         reversedLink(id, title) {
             let text = 'article-' + id + '-' + title
             return text.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,
@@ -144,29 +125,6 @@ export default {
                         ];
                     return t[index];
                 });
-        },
-        parseLink(link) {
-            return link.split('-')[1]
-        },
-        fetchData () {
-            this.loading = true
-            this.idArticle = this.parseLink(this.$route.params.id)
-            axios.get(this.resourseUrl)
-                .then(response =>{
-                        this.articleTest = response.data
-                        this.loading = false
-                        this.reversedLogoName()
-                        this.updateBreadcrumbs()
-                })
-                .catch(e => {
-                        console.log(e.message)
-                        this.error = true
-                        this.loading = false
-                });
-        },
-        updateBreadcrumbs() {
-            this.breadcrumbs[2].name = this.articleTest.title
-            this.breadcrumbs[2].link = this.$route.params.id
         }
     }
 }

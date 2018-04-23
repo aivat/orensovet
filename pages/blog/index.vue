@@ -12,7 +12,7 @@
                     <ul>
                         <li v-for="article in articles" :key="article.id">
                             <!-- <nuxt-link v-bind:to="reversedLink(article.id, article.title)"> -->
-                            <nuxt-link v-bind:to="{ name: 'blog-id', params: { id:reversedLink(article.id, article.title) } }">
+                            <nuxt-link v-bind:to="{ name: 'blog-id', params: { id: reversedLink(article.id, article.title) } }">
                                 <header>
                                     <time> {{ article.date }}</time>
                                     <div class="wrap-author">
@@ -136,7 +136,7 @@ export default {
         },
         reversedLink(id, title) {
             let text = id + '-' + title
-            return '/article-' + text.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,
+            return 'article-' + text.replace(/([а-яё])|([\s_-])|([^a-z\d])/gi,
                 function (all, ch, space, words, i) {
                     if (space || words) {
                         return space ? '-' : '';
@@ -150,7 +150,7 @@ export default {
                             'shch', '', 'y', '', 'e', 'yu', 'ya'
                         ];
                     return t[index];
-                }) + '#start';
+                });
         },
         fetchData () {
             this.loading = true

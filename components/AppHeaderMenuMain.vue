@@ -160,7 +160,7 @@ export default {
 }
 
 .header-background {
-    background: url(~assets/img/fon5.jpg) center center / cover no-repeat;
+    background: url(~static/fon5.jpg) center center / cover no-repeat;
     height: 650px;
 }
 
