@@ -20,7 +20,7 @@ import axios from 'axios'
 
   export default {
       asyncData ({ params, error }) {
-        return axios.get(`http://lba.ru/api/v1/articlesindex?all`)
+        return axios.get(`https://orensovet.ru/api/v1/articlesindex?all`)
         .then((response) => {
             return { 
                 articles: response.data

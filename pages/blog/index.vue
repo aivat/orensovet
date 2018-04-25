@@ -108,7 +108,7 @@ export default {
     },
     computed: {
         resourseUrl() {
-			return 'http://lba.ru/api/v1/articles?lastArticle='+this.lastArticle
+			return 'https://orensovet.ru/api/v1/articles?lastArticle='+this.lastArticle
 		}
     },
     created() {

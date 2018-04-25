@@ -52,7 +52,7 @@ export default {
     },
     asyncData ({ params, error }) {
         let qwe = params.id.split('-')[1]
-        return axios.get(`http://lba.ru/api/v1/articles/${qwe}`)
+        return axios.get(`https://orensovet.ru/api/v1/articles/${qwe}`)
         .then((response) => {
             return { 
                 article: response.data,
