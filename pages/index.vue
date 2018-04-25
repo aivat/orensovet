@@ -5,11 +5,12 @@
     <AppContentPlus/>
     <AppContentReviews/>
     <AppContentJobs/>
-    <AppLastArticle/>
+    <AppLastArticle :articles="articles"></AppLastArticle>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
   import AppHeaderMenuMain from '~/components/AppHeaderMenuMain.vue'
   import AppContentServices from '~/components/AppContentServices.vue'
   import AppContentPlus from '~/components/AppContentPlus.vue'
@@ -18,6 +19,17 @@
   import AppLastArticle from '~/components/AppLastArticle.vue'
 
   export default {
+      asyncData ({ params, error }) {
+        return axios.get(`http://lba.ru/api/v1/articlesindex?all`)
+        .then((response) => {
+            return { 
+                articles: response.data
+            }
+        })
+        .catch((e) => {
+            error({ statusCode: 404, message: 'Страница не найдена' })
+        })
+    },
     components: {
       AppHeaderMenuMain,
       AppContentServices,

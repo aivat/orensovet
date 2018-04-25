@@ -1,5 +1,6 @@
 <template>
   <header class="header header-background">
+    <!-- <img :src="path()"> -->
       <div class="gradient">
         <div class="container">
             <div class="header header-content">
@@ -79,15 +80,11 @@ import AppModalCall  from '~/components/AppModalCall.vue'
 export default {
     data () {
       return {
-        showModal: false,
-        isActive: false
+        showModal: false
       }
     },
     components: {
         AppModalCall
-    },
-    mounted: function () {
-        this.isActive = true
     }
   }
 </script>

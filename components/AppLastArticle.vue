@@ -4,7 +4,6 @@
           <div class="content content-blog">
             <div class="content-title">
               <p class="content-title-h2">НОВОЕ В БЛОГЕ</p>
-              <!-- <p class="content-title-h2">ОТЗЫВЫ О НАШЕЙ РАБОТЕ</p> -->
             </div>
             <div class="blog-wrapper">
                 <ul class="blog-wrapper-list">
@@ -14,7 +13,7 @@
                                 <time> {{ article.date }}</time>
                                 <div class="wrap-author">
                                     <span class="logo-author">
-                                        {{ reversedLogoName(article.author) }}
+                                         {{ reversedLogoName(article.author) }} 
                                     </span>
                                     <span> {{ article.author }}</span>
                                 </div>
@@ -27,7 +26,7 @@
                             </article>
                         </nuxt-link>
                     </li>
-                </ul>
+                </ul> 
             </div>
           </div>
     </div>
@@ -35,42 +34,27 @@
 </template>
 
 <script>
-import Vue from 'vue'
-// import 'swiper/dist/css/swiper.css'
 import axios from 'axios'
 
-// if (process.browser) {
-//   const VueAwesomeSwiper = require('vue-awesome-swiper/dist/ssr')
-//   Vue.use(VueAwesomeSwiper)
-// }
 export default {
+   props: {
+        articles: {
+            type: Array
+        }
+    },
     data() {
       return {
-        articles: [],
-        loading: true,
-        error: false,
-        resourseUrl: 'http://lba.ru/api/v1/articlesindex?all',
-        swiperOption: {
-          slidesPerView: 1,
-          spaceBetween: 30,
-          loop: true,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
-        }
+        // articles: [],
+        // loading: true,
+        // error: false,
+        // resourseUrl: 'http://lba.ru/api/v1/articlesindex?all'
       }
     },
     created() {
-        this.fetchDataLast()
+        // this.fetchDataLast()
     },
     methods: {
       reversedLogoName(author) {
-        //   console.log(author)
           let newLogo = ''
           author.split(' ').map(function(name) {
                   newLogo = newLogo + name[0].toUpperCase()
@@ -81,7 +65,6 @@ export default {
         this.loading = true
         axios.get(this.resourseUrl)
             .then(response =>{
-                    // console.log(response)
                     this.loading = false
                     this.articles = response.data
             })
@@ -107,10 +90,10 @@ export default {
                             'shch', '', 'y', '', 'e', 'yu', 'ya'
                         ];
                     return t[index];
-                }) + '#start';
+                });
         },
     }
-  }
+}
 </script>
  
 <style scoped>
